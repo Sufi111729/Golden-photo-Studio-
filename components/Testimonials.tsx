@@ -13,54 +13,64 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Muhammad Sufiyan (SUFI)",
-      role: "Local Guide",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2070",
-      content:
-        "Good photography. Great experience working with Golden Photo Studio.",
+      name: "Shweta Yadav",
+      role: "Wedding Client",
+      image: "https://lh3.googleusercontent.com/a-/ALV-UjXZTbeKv2HYjxxzEnjaQzTj1CZKOWnXRtzAg4UMrrDfYDtmhwE=w90-h90-p-rp-mo-ba3-br100",
+      content: "It's amazing. The team is very professional and friendly. They made our wedding memories unforgettable. The photos are amazing and the event programs are very helpful.",
       rating: 5,
-      location: "Google Review • 2 years ago",
+      location: "Wedding Photography Client",
     },
     {
       id: 2,
-      name: "GAMING ZONE",
-      role: "Verified Customer",
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070",
-      content:
-        "This studio is very good, you can trust on bhaiya who work here. He is very kind and good. Just come for any work related to photo, print out, videos editing. 👍☺️",
+      name: "Ayush _0057",
+      role: "Wedding Couple",
+      image: "https://lh3.googleusercontent.com/a-/ALV-UjW5R2UrlIRB_QmR0LG-JycLpe3_jjcsePB4nN1LvAyWdGWD1mWEqw=w90-h90-p-rp-mo-br100",
+      content: "Event programs are very helpful and the photos are amazing. The team is very professional and friendly. They made our wedding memories unforgettable.",
       rating: 5,
-      location: "Google Review • 1 month ago",
+      location: "Wedding Photography Clients",
     },
     {
       id: 3,
-      name: "MOHD SAQIB",
+      name: "Mohd Saqib",
       role: "Event Client",
-      image:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070",
-      content:
-        "The experience was amazing. The people are very helpful. Their work was quick and perfect. Must visit/hire them for any kind of events. They gave me a good quality picture.",
+      image: "https://lh3.googleusercontent.com/a-/ALV-UjW8wUjcXYbUdBsATRCTTf87JQyMy_W_pyjIyf9etzBMnBpuCB6B=w90-h90-p-rp-mo-br100",
+      content: "The experience was amazing. The people are very helpful. Their work was quick and perfect. Must visit/hire them for any kind of events.",
       rating: 5,
-      location: "Google Review • 8 months ago",
+      location: "Google Review • Event Photography",
     },
     {
       id: 4,
       name: "Prashant Kumar",
       role: "Local Guide",
-      image:
-        "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=2070",
-      content:
-        "Great photography in kasia kushinagar and well trained photographer. Best experience you will get here. One stop for all your work.",
+      image: "https://lh3.googleusercontent.com/a-/ALV-UjU8Xy8Ug0M-FwMKUfoqXsnNpz3nUypS26jtWqqz83AB30A2keg7=w90-h90-p-rp-mo-ba2-br100",
+      content: "Great photography in Kasia Kushinagar and well trained photographer. Best experience you will get here. One stop for all your work.",
       rating: 5,
-      location: "Google Review • 11 months ago",
+      location: "Google Review • Portrait Session",
+    },
+    {
+      id: 5,
+      name: "Prince Vlogs",
+      role: "Local Guide",
+      image: "https://lh3.googleusercontent.com/a-/ALV-UjUHJWuw4-0UUXA6Gv0ex1DsJ9MeQvjmg4cKb3Lm_20_dvCY9Oo=w45-h45-p-rp-mo-br100",
+      content: "These photos are made very good, this is Kasia's no.1 photo editor and photographer. I have been taking photos from here for the last 5 years, and I am very happy with their work.",
+      rating: 5,
+      location: "Google Review • Portrait Session",
+    },
+    {
+      id: 5,
+      name: "Ranjit Singh",
+      role: "Local Guide",
+      image: "https://lh3.googleusercontent.com/a-/ALV-UjWPcf-wY6B6YBIF_-PedVc0Z4YCw6u0t7r_wSIwS3yAIEcmoCtU=w90-h90-p-rp-mo-br100",
+      content: "Hi I am Atul <br /> Golden studio is the best studio in Kasia Kushinagar . I have been taking photos from here for the last 5 years, and I am very happy with their work.",
+      rating: 5,
+      location: "Google Review • Portrait Session",
     },
   ];
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-    }, 6000);
+    }, 8000);
     return () => clearInterval(timer);
   }, [testimonials.length]);
 
@@ -69,208 +79,145 @@ const Testimonials = () => {
   };
 
   const prevTestimonial = () => {
-    setCurrentTestimonial(
-      (prev) => (prev - 1 + testimonials.length) % testimonials.length,
-    );
+    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
   return (
     <section
       ref={ref}
       id="testimonials"
-      className="py-20 bg-gradient-to-br from-white to-gray-50 overflow-hidden"
+      className="py-16 md:py-24 bg-white"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-20"
         >
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={isInView ? { scale: 1 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="inline-block px-6 py-3 bg-gradient-to-r from-amber-100 to-orange-100 rounded-full mb-6"
-          >
-            <span className="text-amber-600 font-semibold">Client Stories</span>
-          </motion.div>
-          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-            What Our Clients
-            <span className="block bg-gradient-to-r from-amber-500 to-orange-600 bg-clip-text text-transparent">
-              Say About Us
-            </span>
+          <h2 className="text-3xl md:text-4xl font-serif text-gray-800 mb-3 md:mb-4 tracking-wide">
+            Client Testimonials
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Read the experiences of our satisfied clients who trusted us to
-            capture their special moments.
+          <div className="w-20 md:w-24 h-0.5 bg-amber-600 mx-auto mb-6 md:mb-8"></div>
+          <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Hear from our valued clients about their experiences with Golden Photo Studio.
           </p>
         </motion.div>
 
         {/* Testimonials Carousel */}
-        <div className="relative max-w-6xl mx-auto">
+        <div className="relative max-w-4xl mx-auto">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentTestimonial}
-              initial={{ opacity: 0, x: 100 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -100 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-              className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-100"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+              className="bg-white rounded-lg p-8 md:p-10 shadow-sm border border-gray-100"
             >
-              <div className="grid md:grid-cols-3 gap-8 items-center">
+              <div className="flex flex-col md:flex-row gap-8 items-center">
                 {/* Image Section */}
                 <motion.div
-                  initial={{ scale: 0.8, opacity: 0 }}
+                  initial={{ scale: 0.9, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="relative"
+                  className="relative w-32 h-32 md:w-40 md:h-40 flex-shrink-0"
                 >
-                  <div className="relative w-48 h-48 mx-auto">
-                    <div className="absolute inset-0 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full blur-xl opacity-20"></div>
-                    <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-2xl">
-                      <Image
-                        src={testimonials[currentTestimonial].image}
-                        alt={testimonials[currentTestimonial].name}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
+                  <div className="absolute inset-0 bg-amber-100 rounded-full"></div>
+                  <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white">
+                    <Image
+                      src={testimonials[currentTestimonial].image}
+                      alt={testimonials[currentTestimonial].name}
+                      fill
+                      className="object-cover"
+                    />
                   </div>
-
-                  {/* Quote Icon */}
-                  <motion.div
-                    animate={{ rotate: [0, 5, 0] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                    className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg"
-                  >
-                    <Quote className="h-8 w-8 text-white" />
-                  </motion.div>
+                  <Quote className="absolute -top-2 -right-2 h-8 w-8 text-amber-600 bg-white rounded-full p-1" />
                 </motion.div>
 
                 {/* Content Section */}
-                <div className="md:col-span-2 space-y-6">
+                <div className="space-y-4 text-center md:text-left">
                   {/* Stars */}
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
-                    className="flex items-center space-x-1"
-                  >
-                    {[...Array(testimonials[currentTestimonial].rating)].map(
-                      (_, i) => (
-                        <motion.div
-                          key={i}
-                          initial={{ opacity: 0, scale: 0 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          transition={{ duration: 0.3, delay: 0.4 + i * 0.1 }}
-                        >
-                          <Star className="h-6 w-6 text-amber-400 fill-current" />
-                        </motion.div>
-                      ),
-                    )}
-                  </motion.div>
+                  <div className="flex justify-center md:justify-start space-x-1">
+                    {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
+                      <Star key={i} className="h-5 w-5 text-amber-400 fill-current" />
+                    ))}
+                  </div>
 
                   {/* Testimonial Content */}
-                  <motion.blockquote
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.4 }}
-                    className="text-xl md:text-2xl text-gray-700 leading-relaxed italic"
-                  >
+                  <blockquote className="text-lg italic text-gray-700 leading-relaxed">
                     "{testimonials[currentTestimonial].content}"
-                  </motion.blockquote>
+                  </blockquote>
 
                   {/* Author Info */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.5 }}
-                    className="space-y-2"
-                  >
-                    <h4 className="text-xl font-bold text-gray-900">
+                  <div className="space-y-1">
+                    <h4 className="text-lg font-medium text-gray-900">
                       {testimonials[currentTestimonial].name}
                     </h4>
-                    <p className="text-amber-600 font-medium">
+                    <p className="text-amber-600 text-sm">
                       {testimonials[currentTestimonial].role}
                     </p>
-                    <p className="text-gray-500 text-sm">
+                    <p className="text-gray-500 text-xs">
                       {testimonials[currentTestimonial].location}
                     </p>
-                  </motion.div>
+                  </div>
                 </div>
               </div>
             </motion.div>
           </AnimatePresence>
 
           {/* Navigation Buttons */}
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
+          <button
             onClick={prevTestimonial}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 w-12 h-12 bg-white rounded-full shadow-xl flex items-center justify-center text-gray-600 hover:text-amber-500 transition-colors duration-200"
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 md:-translate-x-8 w-10 h-10 bg-white rounded-full shadow-sm flex items-center justify-center text-gray-500 hover:text-amber-600 transition-colors duration-200 border border-gray-200"
           >
-            <ChevronLeft className="h-6 w-6" />
-          </motion.button>
+            <ChevronLeft className="h-5 w-5" />
+          </button>
 
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
+          <button
             onClick={nextTestimonial}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 w-12 h-12 bg-white rounded-full shadow-xl flex items-center justify-center text-gray-600 hover:text-amber-500 transition-colors duration-200"
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 md:translate-x-8 w-10 h-10 bg-white rounded-full shadow-sm flex items-center justify-center text-gray-500 hover:text-amber-600 transition-colors duration-200 border border-gray-200"
           >
-            <ChevronRight className="h-6 w-6" />
-          </motion.button>
+            <ChevronRight className="h-5 w-5" />
+          </button>
         </div>
 
         {/* Dots Indicator */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="flex justify-center mt-12 space-x-3"
-        >
+        <div className="flex justify-center mt-8 space-x-2">
           {testimonials.map((_, index) => (
-            <motion.button
+            <button
               key={index}
-              whileHover={{ scale: 1.2 }}
               onClick={() => setCurrentTestimonial(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentTestimonial
-                  ? "bg-gradient-to-r from-amber-400 to-orange-500 w-8"
-                  : "bg-gray-300 hover:bg-gray-400"
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                index === currentTestimonial ? "bg-amber-600 w-6" : "bg-gray-300"
               }`}
             />
           ))}
-        </motion.div>
+        </div>
 
         {/* Stats Section */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8"
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6"
         >
           {[
-            { number: "100%", label: "Five Star Reviews" },
-            { number: "50+", label: "Happy Clients" },
-            { number: "4+", label: "Google Reviews" },
-            { number: "8+", label: "Years of Excellence" },
+            { number: "45+", label: "Years Experience" },
+            { number: "100%", label: "Satisfaction" },
+            { number: "5000+", label: "Happy Clients" },
+            { number: "Since 1980", label: "Trusted Service" },
           ].map((stat, index) => (
-            <motion.div
+            <div
               key={stat.label}
-              initial={{ scale: 0, opacity: 0 }}
-              animate={isInView ? { scale: 1, opacity: 1 } : {}}
-              transition={{ duration: 0.5, delay: 1 + index * 0.1 }}
-              whileHover={{ scale: 1.05 }}
-              className="text-center p-6 bg-white rounded-2xl shadow-lg border border-gray-100"
+              className="text-center p-4 bg-white rounded-lg border border-gray-100"
             >
-              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-amber-500 to-orange-600 bg-clip-text text-transparent mb-2">
+              <div className="text-2xl md:text-3xl font-serif text-amber-600 mb-1">
                 {stat.number}
               </div>
-              <div className="text-gray-600 font-medium">{stat.label}</div>
-            </motion.div>
+              <div className="text-sm text-gray-600">{stat.label}</div>
+            </div>
           ))}
         </motion.div>
       </div>
