@@ -78,17 +78,21 @@ const Hero = memo(() => {
           </motion.p>
 
           {/* CTA Buttons */}
-          <motion.div
+          <motion.nav
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.8 }}
             className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16"
+            aria-label="Main navigation actions"
+            role="navigation"
           >
             <motion.a
               href="#booking"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-white text-black font-medium text-lg hover:bg-gray-100 transition-colors duration-300"
+              className="px-8 py-4 bg-white text-black font-medium text-lg hover:bg-gray-100 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
+              aria-label="Book a photography session"
+              role="button"
             >
               Book a Session
             </motion.a>
@@ -97,7 +101,9 @@ const Hero = memo(() => {
               href="#portfolio"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 border-2 border-white text-white font-medium text-lg hover:bg-white hover:text-black transition-all duration-300"
+              className="px-8 py-4 border-2 border-white text-white font-medium text-lg hover:bg-white hover:text-black transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
+              aria-label="View our photography portfolio"
+              role="button"
             >
               View Portfolio
             </motion.a>
@@ -106,11 +112,13 @@ const Hero = memo(() => {
               href="#contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 border-2 border-white text-white font-medium text-lg hover:bg-white hover:text-black transition-all duration-300"
+              className="px-8 py-4 border-2 border-white text-white font-medium text-lg hover:bg-white hover:text-black transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
+              aria-label="Contact Golden Photo Studio"
+              role="button"
             >
               Contact Us
             </motion.a>
-          </motion.div>
+          </motion.nav>
 
           {/* Stats */}
           <motion.div
