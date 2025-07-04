@@ -1,11 +1,11 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, memo, useMemo } from "react";
 import Image from "next/image";
 import { Camera, Award, Users, Heart } from "lucide-react";
 
-const About = () => {
+const About = memo(() => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
