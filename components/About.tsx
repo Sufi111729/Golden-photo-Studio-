@@ -54,8 +54,10 @@ const About = memo(() => {
                 fill
                 className="object-top object-cover grayscale hover:grayscale-0 transition-all duration-300"
                 loading="lazy"
-                quality={70}
+                quality={50}
                 sizes="(max-width: 1024px) 100vw, 50vw"
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknywtgFRZzGBBCZgtIGCGHOHQqjvXhgPU/Rf8ANpwWCmKr4SL34AQXhJOBkDbyOV0UXeH2xY4/NyPp4nIXWkhcMnvvwGbE0VWFGlG4VmxmIiWqGLAXMWdfQvIJ5PjE2CQH5+H0HKe2BdpgVUCg8wGpNpYQnUP9BSAYfUvUt6sKhNOC7v8AW7wgVVMk0Ey7A="
               />
             </div>
 
