@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useRef, memo } from "react";
+import { memo } from "react";
 
 const Hero = memo(() => {
   return (
@@ -157,6 +157,6 @@ const Hero = memo(() => {
       </motion.div>
     </section>
   );
-};
+});
 
 export default Hero;
