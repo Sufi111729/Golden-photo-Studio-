@@ -98,18 +98,18 @@ export const metadata: Metadata = {
       rel: "icon",
       type: "image/png",
       sizes: "32x32",
-      url: "https://cdn.builder.io/api/v1/image/assets%2F6efebc511b8f444288d493a58e0a6eb7%2F9270b234fb324a098964be4203cc18e8?format=png&width=32",
+      url: "https://i.ibb.co/gZ8bx8R2/logo1.png",
     },
     {
       rel: "icon",
       type: "image/png",
       sizes: "16x16",
-      url: "https://cdn.builder.io/api/v1/image/assets%2F6efebc511b8f444288d493a58e0a6eb7%2F9270b234fb324a098964be4203cc18e8?format=png&width=16",
+      url: "https://i.ibb.co/gZ8bx8R2/logo1.png",
     },
     {
       rel: "apple-touch-icon",
       sizes: "180x180",
-      url: "https://cdn.builder.io/api/v1/image/assets%2F6efebc511b8f444288d493a58e0a6eb7%2F9270b234fb324a098964be4203cc18e8?format=png&width=180",
+      url: "https://i.ibb.co/gZ8bx8R2/logo1.png",
     },
   ],
 };
