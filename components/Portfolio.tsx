@@ -180,8 +180,10 @@ const Portfolio = memo(() => {
                     fill
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
                     loading="lazy"
-                    quality={60}
+                    quality={40}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    placeholder="blur"
+                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknywtgFRZzGBBCZgtIGCGHOHQqjvXhgPU/Rf8ANpwWCmKr4SL34AQXhJOBkDbyOV0UXeH2xY4/NyPp4nIXWkhcMnvvwGbE0VWFGlG4VmxmIiWqGLAXMWdfQvIJ5PjE2CQH5+H0HKe2BdpgVUCg8wGpNpYQnUP9BSAYfUvUt6sKhNOC7v8AW7wgVVMk0Ey7A="
                   />
                   {/* Bottom Overlay */}
                   <div className="absolute bottom-0 left-0 right-0 bg-white/80 backdrop-blur-sm p-4">
