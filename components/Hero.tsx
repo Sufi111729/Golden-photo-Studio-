@@ -76,7 +76,7 @@ const Hero = memo(() => {
           >
             At Golden Photo Studio we turn moments into timeless memories with
             stunning photography. Whether it's a wedding, birthday, product
-            shoot, or corporate event �� we've got you covered.
+            shoot, or corporate event — we've got you covered.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -117,7 +117,7 @@ const Hero = memo(() => {
             >
               Contact Us
             </motion.a>
-          </motion.nav>
+          </nav>
 
           {/* Stats */}
           <motion.div
