@@ -87,7 +87,7 @@ const Services = memo(() => {
       ],
       popular: false,
     },
-  ];
+  ], []);
 
   return (
     <section
