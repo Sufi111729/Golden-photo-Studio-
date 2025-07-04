@@ -245,12 +245,12 @@ const Services = memo(() => {
             photography needs.
           </p>
           <motion.a
-            href="tel:+919140477247"
+            href="tel:+919336981925"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             className="px-6 py-3 bg-amber-600 text-white font-medium rounded hover:bg-amber-700 transition-colors duration-300 inline-block"
           >
-            Call: +91 9140477247
+            Call: +91 9336981925
           </motion.a>
         </motion.div>
       </div>
