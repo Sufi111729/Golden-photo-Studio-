@@ -241,8 +241,8 @@ const Services = memo(() => {
           </h3>
           <div className="w-16 h-0.5 bg-amber-400 mx-auto mb-4 md:mb-6"></div>
           <p className="text-sm md:text-base text-gray-300 mb-6 md:mb-8 max-w-2xl mx-auto">
-            Every story is unique. Call us directly to discuss your custom
-            photography needs.
+            Every story is unique. Call us directly at +91 9336981925 to discuss
+            your custom photography needs.
           </p>
           <motion.a
             href="tel:+919336981925"
