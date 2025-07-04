@@ -110,10 +110,13 @@ const Portfolio = memo(() => {
     },
   ];
 
-  const filteredItems =
-    activeCategory === "All"
-      ? portfolioItems
-      : portfolioItems.filter((item) => item.category === activeCategory);
+  const filteredItems = useMemo(
+    () =>
+      activeCategory === "All"
+        ? portfolioItems
+        : portfolioItems.filter((item) => item.category === activeCategory),
+    [activeCategory],
+  );
 
   return (
     <section ref={ref} id="portfolio" className="py-20 bg-white text-gray-900">
