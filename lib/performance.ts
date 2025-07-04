@@ -21,14 +21,10 @@ export const getOptimizedImageUrl = (
 // Lazy loading intersection observer
 export const createLazyLoadObserver = (
   callback: (entries: IntersectionObserverEntry[]) => void,
-): IntersectionObserver => {
+): IntersectionObserver | null => {
   if (typeof window === "undefined") {
-    // Return a mock observer for SSR
-    return {
-      observe: () => {},
-      unobserve: () => {},
-      disconnect: () => {},
-    } as IntersectionObserver;
+    // Return null for SSR
+    return null;
   }
 
   return new IntersectionObserver(callback, {
