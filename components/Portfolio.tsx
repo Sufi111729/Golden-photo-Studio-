@@ -1,24 +1,20 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, memo, useMemo } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { Eye, Heart, ZoomIn } from "lucide-react";
+import { Eye, Heart } from "lucide-react";
 
-const Portfolio = () => {
+const Portfolio = memo(() => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
-  const categories = [
-    "All",
-    "Weddings",
-    "Portraits",
-    "Events",
-    "Products",
-    "Studio Work",
-  ];
+  const categories = useMemo(
+    () => ["All", "Weddings", "Portraits", "Events", "Products", "Studio Work"],
+    [],
+  );
 
   const portfolioItems = [
     {
@@ -114,10 +110,13 @@ const Portfolio = () => {
     },
   ];
 
-  const filteredItems =
-    activeCategory === "All"
-      ? portfolioItems
-      : portfolioItems.filter((item) => item.category === activeCategory);
+  const filteredItems = useMemo(
+    () =>
+      activeCategory === "All"
+        ? portfolioItems
+        : portfolioItems.filter((item) => item.category === activeCategory),
+    [activeCategory],
+  );
 
   return (
     <section ref={ref} id="portfolio" className="py-20 bg-white text-gray-900">
@@ -135,16 +134,24 @@ const Portfolio = () => {
         </div>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        <div
+          className="flex flex-wrap justify-center gap-3 mb-12"
+          role="tablist"
+          aria-label="Portfolio category filters"
+        >
           {categories.map((category, index) => (
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-5 py-2 rounded-full text-sm border transition-colors duration-300 ${
+              className={`px-5 py-2 rounded-full text-sm border transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-amber-600 focus:ring-offset-2 ${
                 activeCategory === category
                   ? "bg-amber-600 text-white border-amber-600"
                   : "border-gray-300 text-gray-700 hover:bg-gray-100"
               }`}
+              role="tab"
+              aria-selected={activeCategory === category}
+              aria-controls={`portfolio-grid-${category.toLowerCase()}`}
+              aria-label={`Filter portfolio by ${category}`}
             >
               {category}
             </button>
@@ -171,7 +178,12 @@ const Portfolio = () => {
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
+                    quality={40}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    placeholder="blur"
+                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknywtgFRZzGBBCZgtIGCGHOHQqjvXhgPU/Rf8ANpwWCmKr4SL34AQXhJOBkDbyOV0UXeH2xY4/NyPp4nIXWkhcMnvvwGbE0VWFGlG4VmxmIiWqGLAXMWdfQvIJ5PjE2CQH5+H0HKe2BdpgVUCg8wGpNpYQnUP9BSAYfUvUt6sKhNOC7v8AW7wgVVMk0Ey7A="
                   />
                   {/* Bottom Overlay */}
                   <div className="absolute bottom-0 left-0 right-0 bg-white/80 backdrop-blur-sm p-4">
@@ -252,6 +264,6 @@ const Portfolio = () => {
       </AnimatePresence>
     </section>
   );
-};
+});
 
 export default Portfolio;

@@ -5,13 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, MapPin, Mail, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const pathname = usePathname();
-  const isHomePage = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,7 +33,7 @@ const Header = () => {
         animate={{ y: 0 }}
         transition={{ duration: 0.8 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          !isHomePage || scrolled
+          scrolled
             ? "bg-white shadow-lg border-b border-gray-300"
             : "bg-white/20 backdrop-blur-md"
         }`}
@@ -53,11 +49,13 @@ const Header = () => {
               <div className="relative">
                 <div className="w-12 h-12 border border-gray-300 overflow-hidden rounded-lg">
                   <Image
-                    src="https://cdn.builder.io/api/v1/image/assets%2F6efebc511b8f444288d493a58e0a6eb7%2F9270b234fb324a098964be4203cc18e8?format=webp&width=48"
-                    alt="Golden Photo Studio"
+                    src="https://i.ibb.co/gZ8bx8R2/logo1.png"
+                    alt="Golden Photo Studio Logo"
                     width={48}
                     height={48}
                     className="w-full h-full object-contain"
+                    priority
+                    quality={85}
                   />
                 </div>
               </div>
@@ -65,20 +63,25 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <nav
+            className="hidden lg:flex items-center space-x-8"
+            aria-label="Main navigation"
+            role="navigation"
+          >
             {menuItems.map((item, index) => (
               <motion.a
                 key={item.name}
                 href={item.href}
-                className="text-gray-800 hover:text-gray-600 transition-colors duration-300 font-medium uppercase text-sm tracking-wide"
+                className="text-gray-800 hover:text-gray-600 transition-colors duration-300 font-medium uppercase text-sm tracking-wide focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-offset-2"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                aria-label={`Navigate to ${item.name} section`}
               >
                 {item.name}
               </motion.a>
             ))}
-          </div>
+          </nav>
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
@@ -130,9 +133,7 @@ const Header = () => {
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
               className={`lg:hidden border-t border-gray-300 ${
-                !isHomePage || scrolled
-                  ? "bg-white"
-                  : "bg-white/20 backdrop-blur-md"
+                scrolled ? "bg-white" : "bg-white/20 backdrop-blur-md"
               }`}
             >
               <div className="container mx-auto px-4 py-6 space-y-4">
