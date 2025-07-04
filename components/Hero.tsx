@@ -28,9 +28,9 @@ const Hero = memo(() => {
         <div className="text-center max-w-4xl mx-auto">
           {/* Badge */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3 }}
             className="inline-block border-2 border-white px-6 py-2 mb-8"
             role="banner"
             aria-label="Established 1980"
