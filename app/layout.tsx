@@ -66,8 +66,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "Golden Photo Studio | Professional Photography Services in Kasia, Kushinagar",
+    title: "Golden Photo Studio | Professional Photography Services in Kasia, Kushinagar",
     description:
       "Professional photography services in Kasia, Kushinagar since 1980. Wedding photography, portraits, events & studio work.",
     images: [
@@ -119,24 +118,32 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    name: "Golden Photo Studio",
-    image:
-      "https://cdn.builder.io/api/v1/image/assets%2F6efebc511b8f444288d493a58e0a6eb7%2F9270b234fb324a098964be4203cc18e8?format=webp&width=1200",
-    description:
-      "Professional photography services for weddings, portraits, events, and more. Capture moments, create memories with Golden Photo Studio.",
-    url: "https://goldenphotostudio.netlify.app",
-    telephone: "+1-555-0123",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "123 Photography Lane",
-      addressLocality: "Your City",
-      addressRegion: "Your State",
-      postalCode: "12345",
-      addressCountry: "US",
-    },
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "@id": "https://goldenphotostudio.netlify.app/#business",
+      name: "Golden Photo Studio",
+      alternateName: "Golden Photo Studio Kasia",
+      image: [
+        "https://cdn.builder.io/api/v1/image/assets%2F6efebc511b8f444288d493a58e0a6eb7%2F9270b234fb324a098964be4203cc18e8?format=webp&width=1200",
+        "https://i.ibb.co/xtg4z2dM/DSC-0045q.jpg"
+      ],
+      description:
+        "Professional photography services in Kasia, Kushinagar since 1980. Specializing in wedding photography, portraits, events, products and studio work.",
+      url: "https://goldenphotostudio.netlify.app",
+      telephone: "+919140477247",
+      email: "contact@goldenphotostudio.com",
+      foundingDate: "1980",
+      slogan: "Emotions through photographs",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Kasia",
+        addressLocality: "Kasia",
+        addressRegion: "Kushinagar",
+        postalCode: "274401",
+        addressCountry: "IN",
+      },
     geo: {
       "@type": "GeoCoordinates",
       latitude: "40.7128",
