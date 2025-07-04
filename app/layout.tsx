@@ -2,23 +2,37 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Golden Photo Studio | Professional Photography Services",
+  title: {
+    default:
+      "Golden Photo Studio | Professional Photography Services in Kasia, Kushinagar",
+    template: "%s | Golden Photo Studio",
+  },
   description:
-    "Capture moments, create memories. Professional photography services for weddings, portraits, events, and more. Book your session today with Golden Photo Studio.",
+    "Professional photography services in Kasia, Kushinagar since 1980. Wedding photography, portraits, events, products & studio shoots. Book your session today with Golden Photo Studio.",
   keywords: [
-    "photography",
-    "wedding photography",
-    "portrait photography",
-    "professional photographer",
-    "photo studio",
+    "photography kasia",
+    "wedding photography kushinagar",
+    "portrait photography kasia",
+    "professional photographer kushinagar",
+    "photo studio kasia",
     "event photography",
     "family portraits",
     "professional headshots",
     "golden photo studio",
+    "photography services kushinagar",
+    "best photographer kasia",
+    "wedding photographer near me",
   ],
-  authors: [{ name: "Golden Photo Studio" }],
+  authors: [
+    {
+      name: "Golden Photo Studio",
+      url: "https://goldenphotostudio.netlify.app",
+    },
+  ],
   creator: "Golden Photo Studio",
   publisher: "Golden Photo Studio",
+  category: "Photography Services",
+  classification: "Business",
   formatDetection: {
     email: false,
     address: false,
