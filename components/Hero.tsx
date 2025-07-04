@@ -4,23 +4,22 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useRef, memo } from "react";
 
-const Hero = () => {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
-
+const Hero = memo(() => {
   return (
-    <section ref={ref} id="home" className="relative min-h-screen bg-white">
+    <section id="home" className="relative min-h-screen bg-white">
       {/* Background Image */}
-      <motion.div style={{ y, opacity }} className="absolute inset-0">
-        <div className="absolute inset-0 bg-[url('https://i.ibb.co/qLQgB5sw/Untitled-design.png')] bg-cover bg-center bg-no-repeat" />
+      <div className="absolute inset-0">
+        <Image
+          src="https://i.ibb.co/qLQgB5sw/Untitled-design.png"
+          alt="Golden Photo Studio Background"
+          fill
+          className="object-cover"
+          priority
+          quality={75}
+          sizes="100vw"
+        />
         <div className="absolute inset-0 bg-black/50" />
-      </motion.div>
+      </div>
 
       {/* Main Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
