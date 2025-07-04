@@ -66,7 +66,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Golden Photo Studio | Professional Photography Services in Kasia, Kushinagar",
+    title:
+      "Golden Photo Studio | Professional Photography Services in Kasia, Kushinagar",
     description:
       "Professional photography services in Kasia, Kushinagar since 1980. Wedding photography, portraits, events & studio work.",
     images: [
@@ -127,7 +128,7 @@ export default function RootLayout({
       alternateName: "Golden Photo Studio Kasia",
       image: [
         "https://cdn.builder.io/api/v1/image/assets%2F6efebc511b8f444288d493a58e0a6eb7%2F9270b234fb324a098964be4203cc18e8?format=webp&width=1200",
-        "https://i.ibb.co/xtg4z2dM/DSC-0045q.jpg"
+        "https://i.ibb.co/xtg4z2dM/DSC-0045q.jpg",
       ],
       description:
         "Professional photography services in Kasia, Kushinagar since 1980. Specializing in wedding photography, portraits, events, products and studio work.",
@@ -144,37 +145,84 @@ export default function RootLayout({
         postalCode: "274401",
         addressCountry: "IN",
       },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: "40.7128",
-      longitude: "-74.0060",
-    },
-    openingHoursSpecification: {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: "40.7128",
+        longitude: "-74.0060",
+      },
+      openingHoursSpecification: {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ],
+        opens: "09:00",
+        closes: "18:00",
+      },
+      serviceType: [
+        "Wedding Photography",
+        "Portrait Photography",
+        "Event Photography",
+        "Family Photography",
+        "Professional Headshots",
       ],
-      opens: "09:00",
-      closes: "18:00",
+      areaServed: {
+        "@type": "City",
+        name: "Kasia, Kushinagar",
+      },
+      priceRange: "$$",
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "4.9",
+        reviewCount: "150",
+        bestRating: "5",
+        worstRating: "1",
+      },
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Photography Services",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Wedding Photography",
+              description: "Complete wedding photography coverage",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Portrait Photography",
+              description: "Professional portrait sessions",
+            },
+          },
+        ],
+      },
     },
-    serviceType: [
-      "Wedding Photography",
-      "Portrait Photography",
-      "Event Photography",
-      "Family Photography",
-      "Professional Headshots",
-    ],
-    areaServed: {
-      "@type": "City",
-      name: "Your City",
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://goldenphotostudio.netlify.app/#website",
+      url: "https://goldenphotostudio.netlify.app",
+      name: "Golden Photo Studio",
+      description: "Professional photography services in Kasia, Kushinagar",
+      potentialAction: {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate:
+            "https://goldenphotostudio.netlify.app/?q={search_term_string}",
+        },
+        "query-input": "required name=search_term_string",
+      },
     },
-    priceRange: "$$",
-  };
+  ];
 
   return (
     <html lang="en">
