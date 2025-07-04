@@ -5,13 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, MapPin, Mail, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const pathname = usePathname();
-  const isHomePage = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
