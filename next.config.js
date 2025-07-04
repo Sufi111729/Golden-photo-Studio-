@@ -25,11 +25,7 @@ const nextConfig = {
     minimumCacheTTL: 86400, // 1 day
     dangerouslyAllowSVG: true,
   },
-  experimental: {
-    optimizeCss: true,
-    optimizePackageImports: ["framer-motion", "lucide-react"],
-    webVitalsAttribution: ["CLS", "LCP"],
-  },
+
   compiler: {
     removeConsole: process.env.NODE_ENV === "production",
   },
