@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, memo, useMemo } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { Eye, Heart, ZoomIn } from "lucide-react";
+import { Eye, Heart } from "lucide-react";
 
 const Portfolio = () => {
   const [activeCategory, setActiveCategory] = useState("All");
