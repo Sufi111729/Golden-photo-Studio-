@@ -49,7 +49,10 @@ const About = memo(() => {
                 src="https://i.ibb.co/xtg4z2dM/DSC-0045q.jpg"
                 alt="Golden Photo Studio"
                 fill
-                className="object-top object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                className="object-top object-cover grayscale hover:grayscale-0 transition-all duration-300"
+                loading="lazy"
+                quality={70}
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
 
