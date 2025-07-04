@@ -133,9 +133,7 @@ const Header = () => {
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
               className={`lg:hidden border-t border-gray-300 ${
-                !isHomePage || scrolled
-                  ? "bg-white"
-                  : "bg-white/20 backdrop-blur-md"
+                scrolled ? "bg-white" : "bg-white/20 backdrop-blur-md"
               }`}
             >
               <div className="container mx-auto px-4 py-6 space-y-4">
