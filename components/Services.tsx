@@ -213,7 +213,7 @@ const Services = memo(() => {
 
               {/* CTA Button - Now a direct call link */}
               <motion.a
-                href="tel:+919140477247"
+                href="tel:+919336981925"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className={`w-full flex items-center justify-center space-x-2 px-4 py-2 rounded text-sm font-medium transition-all duration-300 ${
@@ -222,7 +222,7 @@ const Services = memo(() => {
                     : "bg-gray-800 text-white hover:bg-gray-700"
                 }`}
               >
-                <span>Call Now: +91 9140477247</span>
+                <span>Call Now: +91 9336981925</span>
                 <ArrowRight className="h-3 w-3" />
               </motion.a>
             </motion.div>
