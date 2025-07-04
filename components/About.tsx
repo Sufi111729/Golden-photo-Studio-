@@ -130,6 +130,6 @@ const About = memo(() => {
       </div>
     </section>
   );
-};
+});
 
 export default About;
