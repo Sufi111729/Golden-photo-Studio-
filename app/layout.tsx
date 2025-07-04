@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     siteName: "Golden Photo Studio",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "https://cdn.builder.io/api/v1/image/assets%2F6efebc511b8f444288d493a58e0a6eb7%2F9270b234fb324a098964be4203cc18e8?format=webp&width=1200",
         width: 1200,
         height: 630,
         alt: "Golden Photo Studio - Professional Photography",
@@ -50,7 +50,9 @@ export const metadata: Metadata = {
     title: "Golden Photo Studio | Professional Photography Services",
     description:
       "Capture moments, create memories. Professional photography services for weddings, portraits, events, and more.",
-    images: ["/og-image.jpg"],
+    images: [
+      "https://cdn.builder.io/api/v1/image/assets%2F6efebc511b8f444288d493a58e0a6eb7%2F9270b234fb324a098964be4203cc18e8?format=webp&width=1200",
+    ],
   },
   robots: {
     index: true,
