@@ -134,16 +134,24 @@ const Portfolio = memo(() => {
         </div>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        <div
+          className="flex flex-wrap justify-center gap-3 mb-12"
+          role="tablist"
+          aria-label="Portfolio category filters"
+        >
           {categories.map((category, index) => (
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-5 py-2 rounded-full text-sm border transition-colors duration-300 ${
+              className={`px-5 py-2 rounded-full text-sm border transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-amber-600 focus:ring-offset-2 ${
                 activeCategory === category
                   ? "bg-amber-600 text-white border-amber-600"
                   : "border-gray-300 text-gray-700 hover:bg-gray-100"
               }`}
+              role="tab"
+              aria-selected={activeCategory === category}
+              aria-controls={`portfolio-grid-${category.toLowerCase()}`}
+              aria-label={`Filter portfolio by ${category}`}
             >
               {category}
             </button>
