@@ -1,0 +1,36 @@
+{
+  "name": "Golden Photo Studio - Professional Photography Services",
+  "short_name": "Golden Photo Studio",
+  "description": "Professional photography services in Kasia, Kushinagar since 1980. Wedding photography, portraits, events & studio work.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "categories": ["photography", "business", "lifestyle"],
+  "lang": "en-IN",
+  "dir": "ltr",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "https://i.ibb.co/gZ8bx8R2/logo1.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://i.ibb.co/gZ8bx8R2/logo1.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "https://i.ibb.co/qLQgB5sw/Untitled-design.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ]
+}

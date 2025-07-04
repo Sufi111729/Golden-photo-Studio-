@@ -1,11 +1,11 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, memo, useMemo } from "react";
 import Image from "next/image";
 import { Camera, Award, Users, Heart } from "lucide-react";
 
-const About = () => {
+const About = memo(() => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
@@ -26,7 +26,10 @@ const About = () => {
           transition={{ duration: 1 }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl font-serif text-gray-800 mb-4 tracking-wide">
+          <h2
+            className="text-4xl font-serif text-gray-800 mb-4 tracking-wide"
+            id="about-heading"
+          >
             The Golden Photo Studio Legacy
           </h2>
           <div className="w-24 h-1 bg-amber-600 mx-auto mb-8"></div>
@@ -46,10 +49,15 @@ const About = () => {
           >
             <div className="relative w-full aspect-[3/4] overflow-hidden rounded-lg shadow-lg border-8 border-white">
               <Image
-                src="https://i.ibb.co/xtg4z2dM/DSC-0045q.jpg"
-                alt="Golden Photo Studio"
+                src="https://cdn.builder.io/api/v1/image/assets%2F6a0eea5dfe244aea83b500ef259d96f1%2F400d6f30944a4785a41aac86473ec4e1?format=webp&width=800"
+                alt="Golden Photo Studio Owner - Professional Photographer"
                 fill
-                className="object-top object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                className="object-center object-cover grayscale hover:grayscale-0 transition-all duration-300"
+                loading="lazy"
+                quality={60}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknywtgFRZzGBBCZgtIGCGHOHQqjvXhgPU/Rf8ANpwWCmKr4SL34AQXhJOBkDbyOV0UXeH2xY4/NyPp4nIXWkhcMnvvwGbE0VWFGlG4VmxmIiWqGLAXMWdfQvIJ5PjE2CQH5+H0HKe2BdpgVUCg8wGpNpYQnUP9BSAYfUvUt6sKhNOC7v8AW7wgVVMk0Ey7A="
               />
             </div>
 
@@ -130,6 +138,6 @@ const About = () => {
       </div>
     </section>
   );
-};
+});
 
 export default About;

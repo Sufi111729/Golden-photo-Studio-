@@ -1,37 +1,39 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
-import { Play, Star, Award } from "lucide-react";
-import { useRef } from "react";
+import { memo } from "react";
 
-const Hero = () => {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
-
+const Hero = memo(() => {
   return (
-    <section ref={ref} id="home" className="relative min-h-screen bg-white">
+    <section id="home" className="relative min-h-screen bg-white">
       {/* Background Image */}
-      <motion.div style={{ y, opacity }} className="absolute inset-0">
-        <div className="absolute inset-0 bg-[url('https://i.ibb.co/qLQgB5sw/Untitled-design.png')] bg-cover bg-center bg-no-repeat" />
+      <div className="absolute inset-0">
+        <Image
+          src="https://i.ibb.co/qLQgB5sw/Untitled-design.png"
+          alt="Golden Photo Studio Background"
+          fill
+          className="object-cover"
+          priority
+          quality={50}
+          sizes="100vw"
+          placeholder="blur"
+          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknywtgFRZzGBBCZgtIGCGHOHQqjvXhgPU/Rf8ANpwWCmKr4SL34AQXhJOBkDbyOV0UXeH2xY4/NyPp4nIXWkhcMnvvwGbE0VWFGlG4VmxmIiWqGLAXMWdfQvIJ5PjE2CQH5+H0HKe2BdpgVUCg8wGpNpYQnUP9BSAYfUvUt6sKhNOC7v8AW7wgVVMk0Ey7A="
+        />
         <div className="absolute inset-0 bg-black/50" />
-      </motion.div>
+      </div>
 
       {/* Main Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
         <div className="text-center max-w-4xl mx-auto">
           {/* Badge */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3 }}
             className="inline-block border-2 border-white px-6 py-2 mb-8"
+            role="banner"
+            aria-label="Established 1980"
           >
             <span className="text-white font-medium uppercase tracking-widest text-sm">
               Est. 1980 • Professional Photography
@@ -40,10 +42,12 @@ const Hero = () => {
 
           {/* Main Heading */}
           <motion.h1
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.4 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.2 }}
             className="text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-6 leading-tight"
+            id="main-heading"
+            aria-describedby="main-subtitle"
           >
             <span className="block">Emotions through</span>
             <span className="block italic">photographs</span>
@@ -55,6 +59,8 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
             className="text-xl md:text-2xl text-white mb-4 max-w-3xl mx-auto leading-relaxed font-light"
+            id="main-subtitle"
+            role="text"
           >
             Professional Photography Services for Every Occasion
           </motion.p>
@@ -65,6 +71,8 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.7 }}
             className="text-lg text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed"
+            role="text"
+            aria-label="Golden Photo Studio description"
           >
             At Golden Photo Studio we turn moments into timeless memories with
             stunning photography. Whether it's a wedding, birthday, product
@@ -72,17 +80,18 @@ const Hero = () => {
           </motion.p>
 
           {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.8 }}
+          <nav
             className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16"
+            aria-label="Main navigation actions"
+            role="navigation"
           >
             <motion.a
               href="#booking"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-white text-black font-medium text-lg hover:bg-gray-100 transition-colors duration-300"
+              className="px-8 py-4 bg-white text-black font-medium text-lg hover:bg-gray-100 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
+              aria-label="Book a photography session"
+              role="button"
             >
               Book a Session
             </motion.a>
@@ -91,7 +100,9 @@ const Hero = () => {
               href="#portfolio"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 border-2 border-white text-white font-medium text-lg hover:bg-white hover:text-black transition-all duration-300"
+              className="px-8 py-4 border-2 border-white text-white font-medium text-lg hover:bg-white hover:text-black transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
+              aria-label="View our photography portfolio"
+              role="button"
             >
               View Portfolio
             </motion.a>
@@ -100,11 +111,13 @@ const Hero = () => {
               href="#contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 border-2 border-white text-white font-medium text-lg hover:bg-white hover:text-black transition-all duration-300"
+              className="px-8 py-4 border-2 border-white text-white font-medium text-lg hover:bg-white hover:text-black transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
+              aria-label="Contact Golden Photo Studio"
+              role="button"
             >
               Contact Us
             </motion.a>
-          </motion.div>
+          </nav>
 
           {/* Stats */}
           <motion.div
@@ -159,6 +172,6 @@ const Hero = () => {
       </motion.div>
     </section>
   );
-};
+});
 
 export default Hero;
