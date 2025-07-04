@@ -42,9 +42,9 @@ const Hero = memo(() => {
 
           {/* Main Heading */}
           <motion.h1
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.4 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.2 }}
             className="text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-6 leading-tight"
             id="main-heading"
             aria-describedby="main-subtitle"
