@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     locale: "en_IN",
     type: "website",
     emails: ["contact@goldenphotostudio.com"],
-    phoneNumbers: ["+919140477247"],
+    phoneNumbers: ["+919336981925"],
     countryName: "India",
   },
   twitter: {
