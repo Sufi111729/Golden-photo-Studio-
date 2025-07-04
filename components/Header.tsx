@@ -67,15 +67,20 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <nav
+            className="hidden lg:flex items-center space-x-8"
+            aria-label="Main navigation"
+            role="navigation"
+          >
             {menuItems.map((item, index) => (
               <motion.a
                 key={item.name}
                 href={item.href}
-                className="text-gray-800 hover:text-gray-600 transition-colors duration-300 font-medium uppercase text-sm tracking-wide"
+                className="text-gray-800 hover:text-gray-600 transition-colors duration-300 font-medium uppercase text-sm tracking-wide focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-offset-2"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                aria-label={`Navigate to ${item.name} section`}
               >
                 {item.name}
               </motion.a>
