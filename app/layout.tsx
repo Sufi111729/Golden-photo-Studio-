@@ -43,9 +43,10 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Golden Photo Studio | Professional Photography Services",
+    title:
+      "Golden Photo Studio | Professional Photography Services in Kasia, Kushinagar",
     description:
-      "Capture moments, create memories. Professional photography services for weddings, portraits, events, and more.",
+      "Professional photography services in Kasia, Kushinagar since 1980. Wedding photography, portraits, events & studio work. Capture moments, create memories.",
     url: "https://goldenphotostudio.netlify.app",
     siteName: "Golden Photo Studio",
     images: [
@@ -53,11 +54,15 @@ export const metadata: Metadata = {
         url: "https://cdn.builder.io/api/v1/image/assets%2F6efebc511b8f444288d493a58e0a6eb7%2F9270b234fb324a098964be4203cc18e8?format=webp&width=1200",
         width: 1200,
         height: 630,
-        alt: "Golden Photo Studio - Professional Photography",
+        alt: "Golden Photo Studio - Professional Photography Services in Kasia, Kushinagar since 1980",
+        type: "image/webp",
       },
     ],
-    locale: "en_US",
+    locale: "en_IN",
     type: "website",
+    emails: ["contact@goldenphotostudio.com"],
+    phoneNumbers: ["+919140477247"],
+    countryName: "India",
   },
   twitter: {
     card: "summary_large_image",
