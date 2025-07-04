@@ -58,6 +58,8 @@ const Header = () => {
                     width={48}
                     height={48}
                     className="w-full h-full object-contain"
+                    priority
+                    quality={85}
                   />
                 </div>
               </div>
