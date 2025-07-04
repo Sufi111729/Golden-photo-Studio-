@@ -5,20 +5,20 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { Eye, Heart } from "lucide-react";
 
-const Portfolio = () => {
+const Portfolio = memo(() => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
-  const categories = [
+  const categories = useMemo(() => [
     "All",
     "Weddings",
     "Portraits",
     "Events",
     "Products",
     "Studio Work",
-  ];
+  ], []);
 
   const portfolioItems = [
     {
