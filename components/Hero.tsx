@@ -1,9 +1,8 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
-import { Play, Star, Award } from "lucide-react";
-import { useRef } from "react";
+import { useRef, memo } from "react";
 
 const Hero = () => {
   const ref = useRef(null);
