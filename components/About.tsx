@@ -49,12 +49,12 @@ const About = memo(() => {
           >
             <div className="relative w-full aspect-[3/4] overflow-hidden rounded-lg shadow-lg border-8 border-white">
               <Image
-                src="https://i.ibb.co/xtg4z2dM/DSC-0045q.jpg"
-                alt="Golden Photo Studio"
+                src="https://cdn.builder.io/api/v1/image/assets%2F6a0eea5dfe244aea83b500ef259d96f1%2F400d6f30944a4785a41aac86473ec4e1?format=webp&width=800"
+                alt="Golden Photo Studio Owner - Professional Photographer"
                 fill
-                className="object-top object-cover grayscale hover:grayscale-0 transition-all duration-300"
+                className="object-center object-cover grayscale hover:grayscale-0 transition-all duration-300"
                 loading="lazy"
-                quality={50}
+                quality={60}
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 placeholder="blur"
                 blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknywtgFRZzGBBCZgtIGCGHOHQqjvXhgPU/Rf8ANpwWCmKr4SL34AQXhJOBkDbyOV0UXeH2xY4/NyPp4nIXWkhcMnvvwGbE0VWFGlG4VmxmIiWqGLAXMWdfQvIJ5PjE2CQH5+H0HKe2BdpgVUCg8wGpNpYQnUP9BSAYfUvUt6sKhNOC7v8AW7wgVVMk0Ey7A="
