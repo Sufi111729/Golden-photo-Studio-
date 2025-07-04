@@ -13,13 +13,13 @@
   "scope": "/",
   "icons": [
     {
-      "src": "https://cdn.builder.io/api/v1/image/assets%2F6efebc511b8f444288d493a58e0a6eb7%2F9270b234fb324a098964be4203cc18e8?format=png&width=192",
+      "src": "https://i.ibb.co/gZ8bx8R2/logo1.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "https://cdn.builder.io/api/v1/image/assets%2F6efebc511b8f444288d493a58e0a6eb7%2F9270b234fb324a098964be4203cc18e8?format=png&width=512",
+      "src": "https://i.ibb.co/gZ8bx8R2/logo1.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
