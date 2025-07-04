@@ -102,11 +102,20 @@ const Services = memo(() => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12 md:mb-20"
         >
-          <h2 className="text-3xl md:text-4xl font-serif text-gray-800 mb-3 md:mb-4 tracking-wide">
+          <h2
+            className="text-3xl md:text-4xl font-serif text-gray-800 mb-3 md:mb-4 tracking-wide"
+            id="services-heading"
+          >
             Our Photography Services
           </h2>
-          <div className="w-20 md:w-24 h-0.5 bg-amber-600 mx-auto mb-6 md:mb-8"></div>
-          <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <div
+            className="w-20 md:w-24 h-0.5 bg-amber-600 mx-auto mb-6 md:mb-8"
+            aria-hidden="true"
+          ></div>
+          <p
+            className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed"
+            aria-describedby="services-heading"
+          >
             Professional photography services tailored to your unique needs,
             delivered with timeless elegance and technical excellence.
           </p>
