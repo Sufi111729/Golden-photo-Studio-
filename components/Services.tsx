@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, memo, useMemo } from "react";
 import {
   Heart,
   Users,
@@ -90,11 +90,7 @@ const Services = () => {
   ];
 
   return (
-    <section
-      ref={ref}
-      id="services"
-      className="py-16 md:py-24 bg-white"
-    >
+    <section ref={ref} id="services" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -108,7 +104,7 @@ const Services = () => {
           </h2>
           <div className="w-20 md:w-24 h-0.5 bg-amber-600 mx-auto mb-6 md:mb-8"></div>
           <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Professional photography services tailored to your unique needs, 
+            Professional photography services tailored to your unique needs,
             delivered with timeless elegance and technical excellence.
           </p>
         </motion.div>
@@ -141,27 +137,35 @@ const Services = () => {
               )}
 
               {/* Icon */}
-              <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 ${
-                service.popular ? "bg-amber-600" : "bg-gray-800"
-              }`}>
+              <div
+                className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 ${
+                  service.popular ? "bg-amber-600" : "bg-gray-800"
+                }`}
+              >
                 <service.icon className="h-5 w-5 text-white" />
               </div>
 
               {/* Content */}
               <div className="mb-4">
-                <h3 className={`text-xl font-serif font-medium mb-2 ${
-                  service.popular ? "text-gray-900" : "text-gray-800"
-                }`}>
+                <h3
+                  className={`text-xl font-serif font-medium mb-2 ${
+                    service.popular ? "text-gray-900" : "text-gray-800"
+                  }`}
+                >
                   {service.title}
                 </h3>
-                <p className={`text-sm mb-4 ${
-                  service.popular ? "text-gray-700" : "text-gray-600"
-                }`}>
+                <p
+                  className={`text-sm mb-4 ${
+                    service.popular ? "text-gray-700" : "text-gray-600"
+                  }`}
+                >
                   {service.description}
                 </p>
-                <div className={`text-lg font-medium mb-4 ${
-                  service.popular ? "text-amber-700" : "text-gray-700"
-                }`}>
+                <div
+                  className={`text-lg font-medium mb-4 ${
+                    service.popular ? "text-amber-700" : "text-gray-700"
+                  }`}
+                >
                   {service.price}
                 </div>
               </div>
@@ -184,9 +188,11 @@ const Services = () => {
                         service.popular ? "text-amber-600" : "text-gray-600"
                       }`}
                     />
-                    <span className={`text-xs ${
-                      service.popular ? "text-gray-700" : "text-gray-600"
-                    }`}>
+                    <span
+                      className={`text-xs ${
+                        service.popular ? "text-gray-700" : "text-gray-600"
+                      }`}
+                    >
                       {feature}
                     </span>
                   </motion.div>
@@ -223,7 +229,8 @@ const Services = () => {
           </h3>
           <div className="w-16 h-0.5 bg-amber-400 mx-auto mb-4 md:mb-6"></div>
           <p className="text-sm md:text-base text-gray-300 mb-6 md:mb-8 max-w-2xl mx-auto">
-            Every story is unique. Call us directly to discuss your custom photography needs.
+            Every story is unique. Call us directly to discuss your custom
+            photography needs.
           </p>
           <motion.a
             href="tel:+919140477247"
