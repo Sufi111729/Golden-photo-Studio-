@@ -30,6 +30,8 @@ const Hero = memo(() => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="inline-block border-2 border-white px-6 py-2 mb-8"
+            role="banner"
+            aria-label="Established 1980"
           >
             <span className="text-white font-medium uppercase tracking-widest text-sm">
               Est. 1980 • Professional Photography
@@ -42,6 +44,8 @@ const Hero = memo(() => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
             className="text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-6 leading-tight"
+            id="main-heading"
+            aria-describedby="main-subtitle"
           >
             <span className="block">Emotions through</span>
             <span className="block italic">photographs</span>
