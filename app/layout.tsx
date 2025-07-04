@@ -133,7 +133,7 @@ export default function RootLayout({
       description:
         "Professional photography services in Kasia, Kushinagar since 1980. Specializing in wedding photography, portraits, events, products and studio work.",
       url: "https://goldenphotostudio.netlify.app",
-      telephone: "+919140477247",
+      telephone: "+919336981925",
       email: "contact@goldenphotostudio.com",
       foundingDate: "1980",
       slogan: "Emotions through photographs",
