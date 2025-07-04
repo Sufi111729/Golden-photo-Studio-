@@ -11,14 +11,10 @@ const Portfolio = memo(() => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
-  const categories = useMemo(() => [
-    "All",
-    "Weddings",
-    "Portraits",
-    "Events",
-    "Products",
-    "Studio Work",
-  ], []);
+  const categories = useMemo(
+    () => ["All", "Weddings", "Portraits", "Events", "Products", "Studio Work"],
+    [],
+  );
 
   const portfolioItems = [
     {
@@ -252,6 +248,6 @@ const Portfolio = memo(() => {
       </AnimatePresence>
     </section>
   );
-};
+});
 
 export default Portfolio;
