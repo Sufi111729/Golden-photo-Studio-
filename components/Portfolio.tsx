@@ -24,8 +24,7 @@ const Portfolio = () => {
     {
       id: 1,
       category: "Weddings",
-      image:
-        "https://i.ibb.co/4wYdZXM7/1-7.jpg",
+      image: "https://i.ibb.co/4wYdZXM7/1-7.jpg",
       title: "Romantic Wedding Ceremony",
       likes: 234,
       views: 1200,
@@ -33,8 +32,7 @@ const Portfolio = () => {
     {
       id: 2,
       category: "Portraits",
-      image:
-        "https://i.ibb.co/nKnZKZ2/DSC-0008ddq.jpg",
+      image: "https://i.ibb.co/nKnZKZ2/DSC-0008ddq.jpg",
       title: "Professional Portrait",
       likes: 187,
       views: 890,
@@ -42,8 +40,7 @@ const Portfolio = () => {
     {
       id: 3,
       category: "Fashion",
-      image:
-        "https://i.ibb.co/C35sy903/JYOTI-1-1-copy.jpg",
+      image: "https://i.ibb.co/C35sy903/JYOTI-1-1-copy.jpg",
       title: "Fashion Editorial",
       likes: 312,
       views: 1500,
@@ -60,8 +57,7 @@ const Portfolio = () => {
     {
       id: 5,
       category: "Events",
-      image:
-        "https://i.ibb.co/pj3gzCMy/00.jpg",
+      image: "https://i.ibb.co/pj3gzCMy/00.jpg",
       title: "Corporate Event",
       likes: 98,
       views: 540,
@@ -69,8 +65,7 @@ const Portfolio = () => {
     {
       id: 6,
       category: "Weddings",
-      image:
-        "https://i.ibb.co/rGdY87Pf/1-6.jpg",
+      image: "https://i.ibb.co/rGdY87Pf/1-6.jpg",
       title: "Wedding Reception",
       likes: 201,
       views: 980,
@@ -78,8 +73,7 @@ const Portfolio = () => {
     {
       id: 7,
       category: "Portraits",
-      image:
-        "https://i.ibb.co/xKb1zBP9/DSC-0043.jpg",
+      image: "https://i.ibb.co/xKb1zBP9/DSC-0043.jpg",
       title: "Family Portrait",
       likes: 145,
       views: 720,
@@ -87,31 +81,28 @@ const Portfolio = () => {
     {
       id: 8,
       category: "Fashion",
-      image:
-        "https://i.ibb.co/qLQgB5sw/Untitled-design.png",
+      image: "https://i.ibb.co/qLQgB5sw/Untitled-design.png",
       title: "Studio Fashion",
       likes: 278,
       views: 1300,
     },
-     {
+    {
       id: 9,
       category: "Portraits",
-      image:
-        "https://i.ibb.co/sdGbh6NX/DSC-0569.jpg",
+      image: "https://i.ibb.co/sdGbh6NX/DSC-0569.jpg",
       title: "Family Portrait",
       likes: 145,
       views: 720,
     },
     {
-      id: 9,
+      id: 11,
       category: "Portraits",
-      image:
-        "https://i.ibb.co/2YymgRFp/DSC-0036.jpg",
-      title: "Family Portrait",
-      likes: 145,
-      views: 720,
+      image: "https://i.ibb.co/2YymgRFp/DSC-0036.jpg",
+      title: "Creative Portrait",
+      likes: 167,
+      views: 780,
     },
-    
+
     {
       id: 10,
       category: "Nature",

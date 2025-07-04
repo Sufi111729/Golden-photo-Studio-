@@ -4,10 +4,14 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, MapPin, Mail, ChevronDown } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,28 +37,32 @@ const Header = () => {
         animate={{ y: 0 }}
         transition={{ duration: 0.8 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? "bg-white shadow-lg border-b border-gray-300" : "bg-white"
+          !isHomePage || scrolled
+            ? "bg-white shadow-lg border-b border-gray-300"
+            : "bg-white/20 backdrop-blur-md"
         }`}
       >
         <nav className="container mx-auto flex items-center justify-between py-4 px-4 sm:px-6 lg:px-8">
           {/* Logo */}
-          <motion.div
-            className="flex items-center"
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.2 }}
-          >
-            <div className="relative">
-              <div className="w-12 h-12 border border-gray-300 overflow-hidden">
-                <Image
-                  src="https://i.ibb.co/wZ7pYNT0/Black-and-White-Photography-Camera-Photo-Studio-Logo.png"
-                  alt="Golden Photo Studio"
-                  width={48}
-                  height={48}
-                  className="w-full h-full object-cover"
-                />
+          <Link href="/">
+            <motion.div
+              className="flex items-center cursor-pointer"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+            >
+              <div className="relative">
+                <div className="w-12 h-12 border border-gray-300 overflow-hidden rounded-lg">
+                  <Image
+                    src="https://cdn.builder.io/api/v1/image/assets%2F6efebc511b8f444288d493a58e0a6eb7%2F9270b234fb324a098964be4203cc18e8?format=webp&width=48"
+                    alt="Golden Photo Studio"
+                    width={48}
+                    height={48}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
@@ -121,7 +129,11 @@ const Header = () => {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="lg:hidden bg-white border-t border-gray-300"
+              className={`lg:hidden border-t border-gray-300 ${
+                !isHomePage || scrolled
+                  ? "bg-white"
+                  : "bg-white/20 backdrop-blur-md"
+              }`}
             >
               <div className="container mx-auto px-4 py-6 space-y-4">
                 {menuItems.map((item, index) => (
