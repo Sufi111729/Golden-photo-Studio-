@@ -76,14 +76,11 @@ const Hero = memo(() => {
           >
             At Golden Photo Studio we turn moments into timeless memories with
             stunning photography. Whether it's a wedding, birthday, product
-            shoot, or corporate event — we've got you covered.
+            shoot, or corporate event �� we've got you covered.
           </motion.p>
 
           {/* CTA Buttons */}
-          <motion.nav
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.8 }}
+          <nav
             className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16"
             aria-label="Main navigation actions"
             role="navigation"
