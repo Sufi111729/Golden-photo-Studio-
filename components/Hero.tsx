@@ -57,6 +57,8 @@ const Hero = memo(() => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
             className="text-xl md:text-2xl text-white mb-4 max-w-3xl mx-auto leading-relaxed font-light"
+            id="main-subtitle"
+            role="text"
           >
             Professional Photography Services for Every Occasion
           </motion.p>
@@ -67,6 +69,8 @@ const Hero = memo(() => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.7 }}
             className="text-lg text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed"
+            role="text"
+            aria-label="Golden Photo Studio description"
           >
             At Golden Photo Studio we turn moments into timeless memories with
             stunning photography. Whether it's a wedding, birthday, product
