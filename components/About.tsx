@@ -26,7 +26,10 @@ const About = memo(() => {
           transition={{ duration: 1 }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl font-serif text-gray-800 mb-4 tracking-wide">
+          <h2
+            className="text-4xl font-serif text-gray-800 mb-4 tracking-wide"
+            id="about-heading"
+          >
             The Golden Photo Studio Legacy
           </h2>
           <div className="w-24 h-1 bg-amber-600 mx-auto mb-8"></div>
