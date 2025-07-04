@@ -167,7 +167,10 @@ const Portfolio = memo(() => {
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
+                    quality={60}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                   {/* Bottom Overlay */}
                   <div className="absolute bottom-0 left-0 right-0 bg-white/80 backdrop-blur-sm p-4">
