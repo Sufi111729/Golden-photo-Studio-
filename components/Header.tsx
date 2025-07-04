@@ -53,8 +53,8 @@ const Header = () => {
               <div className="relative">
                 <div className="w-12 h-12 border border-gray-300 overflow-hidden rounded-lg">
                   <Image
-                    src="https://cdn.builder.io/api/v1/image/assets%2F6efebc511b8f444288d493a58e0a6eb7%2F9270b234fb324a098964be4203cc18e8?format=webp&width=48"
-                    alt="Golden Photo Studio"
+                    src="https://i.ibb.co/gZ8bx8R2/logo1.png"
+                    alt="Golden Photo Studio Logo"
                     width={48}
                     height={48}
                     className="w-full h-full object-contain"
