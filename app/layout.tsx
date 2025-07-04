@@ -101,7 +101,8 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     name: "Golden Photo Studio",
-    image: "https://goldenphotostudio.netlify.app/og-image.jpg",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F6efebc511b8f444288d493a58e0a6eb7%2F9270b234fb324a098964be4203cc18e8?format=webp&width=1200",
     description:
       "Professional photography services for weddings, portraits, events, and more. Capture moments, create memories with Golden Photo Studio.",
     url: "https://goldenphotostudio.netlify.app",
