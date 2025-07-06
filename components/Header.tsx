@@ -103,23 +103,23 @@ const Header = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <motion.button
-            className="lg:hidden relative z-50 p-2 border border-gray-300"
+          <button
+            className="lg:hidden relative z-50 p-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-offset-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            aria-label={
+              isMenuOpen ? "Close navigation menu" : "Open navigation menu"
+            }
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
           >
-            <motion.div
-              animate={isMenuOpen ? { rotate: 180 } : { rotate: 0 }}
-              transition={{ duration: 0.3 }}
-            >
+            <div>
               {isMenuOpen ? (
-                <X className="h-6 w-6 text-gray-800" />
+                <X className="h-6 w-6 text-gray-800" aria-hidden="true" />
               ) : (
-                <Menu className="h-6 w-6 text-gray-800" />
+                <Menu className="h-6 w-6 text-gray-800" aria-hidden="true" />
               )}
-            </motion.div>
-          </motion.button>
+            </div>
+          </button>
         </nav>
 
         {/* Mobile Menu */}
