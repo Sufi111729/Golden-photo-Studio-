@@ -184,7 +184,7 @@ const Header = () => {
             </motion.div>
           )}
         </AnimatePresence>
-      </motion.header>
+      </header>
 
       {/* Spacer for fixed header */}
       <div className="h-20"></div>
