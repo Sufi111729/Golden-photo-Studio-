@@ -32,17 +32,19 @@ const Header = () => {
   return (
     <>
       {/* Main Header */}
-      <motion.header
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.8 }}
+      <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           !isHomePage || scrolled
             ? "bg-white shadow-lg border-b border-gray-300"
             : "bg-white/20 backdrop-blur-md"
         }`}
+        role="banner"
       >
-        <nav className="container mx-auto flex items-center justify-between py-4 px-4 sm:px-6 lg:px-8">
+        <nav
+          className="container mx-auto flex items-center justify-between py-4 px-4 sm:px-6 lg:px-8"
+          role="navigation"
+          aria-label="Main site navigation"
+        >
           {/* Logo */}
           <Link href="/">
             <motion.div
