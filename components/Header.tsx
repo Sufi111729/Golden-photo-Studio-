@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Phone, MapPin, Mail, ChevronDown } from "lucide-react";
+import { AnimatePresence } from "framer-motion";
+import { Menu, X, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -36,7 +36,7 @@ const Header = () => {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           !isHomePage || scrolled
             ? "bg-white shadow-lg border-b border-gray-300"
-            : "bg-white/20 backdrop-blur-md"
+            : "bg-white/95 backdrop-blur-md"
         }`}
         role="banner"
       >
@@ -48,8 +48,8 @@ const Header = () => {
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center"
-            aria-label="Golden Photo Studio - Home"
+            className="flex items-center hover:opacity-80 transition-opacity"
+            aria-label="Golden Photo Studio - Professional Photography Services in Kasia"
           >
             <div className="relative">
               <div className="w-12 h-12 border border-gray-300 overflow-hidden rounded-lg">
@@ -68,35 +68,32 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            {menuItems.map((item, index) => (
-              <motion.a
+            {menuItems.map((item) => (
+              <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-800 hover:text-gray-600 transition-colors duration-300 font-medium uppercase text-sm tracking-wide focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-offset-2"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="text-gray-800 hover:text-gray-600 transition-colors duration-300 font-medium uppercase text-sm tracking-wide focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-offset-2 rounded"
                 aria-label={`Navigate to ${item.name} section`}
               >
                 {item.name}
-              </motion.a>
+              </a>
             ))}
           </div>
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
             <a
-              href="tel:+919336981925"
-              className="flex items-center space-x-2 px-4 py-2 text-gray-800 hover:text-gray-600 transition-colors duration-300 border border-gray-300 font-medium focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-offset-2"
-              aria-label="Call Golden Photo Studio at +91 93369 81925"
+              href="tel:+919140477247"
+              className="flex items-center space-x-2 px-4 py-2 text-gray-800 hover:text-gray-600 transition-colors duration-300 border border-gray-300 font-medium focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-offset-2 rounded"
+              aria-label="Call Golden Photo Studio at +91 91404 77247"
             >
               <Phone className="h-4 w-4" aria-hidden="true" />
               <span className="text-sm">Call Now</span>
             </a>
             <a
               href="#booking"
-              className="px-6 py-2.5 bg-black text-white font-medium hover:bg-gray-800 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
-              aria-label="Book a photography session"
+              className="px-6 py-2.5 bg-gray-900 text-white font-medium hover:bg-gray-800 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 rounded"
+              aria-label="Book a photography session with Golden Photo Studio"
             >
               Book Session
             </a>
@@ -104,7 +101,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden relative z-50 p-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-offset-2"
+            className="lg:hidden relative z-50 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-offset-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={
               isMenuOpen ? "Close navigation menu" : "Open navigation menu"
@@ -112,13 +109,11 @@ const Header = () => {
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
           >
-            <div>
-              {isMenuOpen ? (
-                <X className="h-6 w-6 text-gray-800" aria-hidden="true" />
-              ) : (
-                <Menu className="h-6 w-6 text-gray-800" aria-hidden="true" />
-              )}
-            </div>
+            {isMenuOpen ? (
+              <X className="h-6 w-6 text-gray-800" aria-hidden="true" />
+            ) : (
+              <Menu className="h-6 w-6 text-gray-800" aria-hidden="true" />
+            )}
           </button>
         </nav>
 
@@ -130,43 +125,39 @@ const Header = () => {
               className={`lg:hidden border-t border-gray-300 ${
                 !isHomePage || scrolled
                   ? "bg-white"
-                  : "bg-white/20 backdrop-blur-md"
+                  : "bg-white/95 backdrop-blur-md"
               }`}
               role="menu"
               aria-labelledby="mobile-menu-button"
             >
               <div className="container mx-auto px-4 py-6 space-y-4">
-                {menuItems.map((item, index) => (
-                  <motion.a
+                {menuItems.map((item) => (
+                  <a
                     key={item.name}
                     href={item.href}
-                    className="block text-gray-800 hover:text-gray-600 transition-colors duration-200 text-lg font-medium py-2 uppercase tracking-wide"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
+                    className="block text-gray-800 hover:text-gray-600 transition-colors duration-200 text-lg font-medium py-2 uppercase tracking-wide focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-offset-2 rounded"
                     onClick={() => setIsMenuOpen(false)}
+                    role="menuitem"
+                    aria-label={`Navigate to ${item.name} section`}
                   >
                     {item.name}
-                  </motion.a>
+                  </a>
                 ))}
 
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: 0.6 }}
-                  className="pt-4 border-t border-gray-300 space-y-3"
-                >
+                <div className="pt-4 border-t border-gray-300 space-y-3">
                   <a
-                    href="tel:+919336981925"
-                    className="block w-full text-center px-6 py-3 border border-gray-300 text-gray-800 font-medium"
+                    href="tel:+919140477247"
+                    className="block w-full text-center px-6 py-3 border border-gray-300 text-gray-800 font-medium rounded focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-offset-2"
                     onClick={() => setIsMenuOpen(false)}
+                    aria-label="Call Golden Photo Studio at +91 91404 77247"
                   >
                     Call Now
                   </a>
                   <a
                     href="#booking"
-                    className="block w-full text-center px-6 py-3 bg-black text-white font-medium"
+                    className="block w-full text-center px-6 py-3 bg-gray-900 text-white font-medium rounded focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2"
                     onClick={() => setIsMenuOpen(false)}
+                    aria-label="Book a photography session with Golden Photo Studio"
                   >
                     Book Session
                   </a>
@@ -178,7 +169,7 @@ const Header = () => {
       </header>
 
       {/* Spacer for fixed header */}
-      <div className="h-20"></div>
+      <div className="h-20" aria-hidden="true"></div>
     </>
   );
 };
