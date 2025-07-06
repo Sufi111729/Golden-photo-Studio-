@@ -85,23 +85,21 @@ const Header = () => {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
-            <motion.a
+            <a
               href="tel:+919336981925"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="flex items-center space-x-2 px-4 py-2 text-gray-800 hover:text-gray-600 transition-colors duration-300 border border-gray-300 font-medium"
+              className="flex items-center space-x-2 px-4 py-2 text-gray-800 hover:text-gray-600 transition-colors duration-300 border border-gray-300 font-medium focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-offset-2"
+              aria-label="Call Golden Photo Studio at +91 93369 81925"
             >
-              <Phone className="h-4 w-4" />
+              <Phone className="h-4 w-4" aria-hidden="true" />
               <span className="text-sm">Call Now</span>
-            </motion.a>
-            <motion.a
+            </a>
+            <a
               href="#booking"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-6 py-2.5 bg-black text-white font-medium hover:bg-gray-800 transition-colors duration-300"
+              className="px-6 py-2.5 bg-black text-white font-medium hover:bg-gray-800 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+              aria-label="Book a photography session"
             >
               Book Session
-            </motion.a>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
