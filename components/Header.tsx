@@ -81,7 +81,7 @@ const Header = () => {
                 {item.name}
               </motion.a>
             ))}
-          </nav>
+          </div>
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
