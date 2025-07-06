@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import React from "react";
 
 export const metadata: Metadata = {
   title: {
@@ -98,18 +99,18 @@ export const metadata: Metadata = {
       rel: "icon",
       type: "image/png",
       sizes: "32x32",
-      url: "https://i.ibb.co/gZ8bx8R2/logo1.png",
+      url: "https://cdn.builder.io/api/v1/image/assets%2F6efebc511b8f444288d493a58e0a6eb7%2F9270b234fb324a098964be4203cc18e8?format=png&width=32",
     },
     {
       rel: "icon",
       type: "image/png",
       sizes: "16x16",
-      url: "https://i.ibb.co/gZ8bx8R2/logo1.png",
+      url: "https://cdn.builder.io/api/v1/image/assets%2F6efebc511b8f444288d493a58e0a6eb7%2F9270b234fb324a098964be4203cc18e8?format=png&width=16",
     },
     {
       rel: "apple-touch-icon",
       sizes: "180x180",
-      url: "https://i.ibb.co/gZ8bx8R2/logo1.png",
+      url: "https://cdn.builder.io/api/v1/image/assets%2F6efebc511b8f444288d493a58e0a6eb7%2F9270b234fb324a098964be4203cc18e8?format=png&width=180",
     },
   ],
 };
@@ -127,8 +128,8 @@ export default function RootLayout({
       name: "Golden Photo Studio",
       alternateName: "Golden Photo Studio Kasia",
       image: [
-        "https://i.ibb.co/gZ8bx8R2/logo1.png",
-        "https://cdn.builder.io/api/v1/image/assets%2F6a0eea5dfe244aea83b500ef259d96f1%2F400d6f30944a4785a41aac86473ec4e1?format=webp&width=800",
+        "https://cdn.builder.io/api/v1/image/assets%2F6efebc511b8f444288d493a58e0a6eb7%2F9270b234fb324a098964be4203cc18e8?format=webp&width=1200",
+        "https://i.ibb.co/xtg4z2dM/DSC-0045q.jpg",
       ],
       description:
         "Professional photography services in Kasia, Kushinagar since 1980. Specializing in wedding photography, portraits, events, products and studio work.",

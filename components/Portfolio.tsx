@@ -91,22 +91,46 @@ const Portfolio = memo(() => {
       views: 720,
     },
     {
-      id: 11,
+      id: 10,
       category: "Portraits",
-      image: "https://i.ibb.co/2YymgRFp/DSC-0036.jpg",
+      image: "https://i.ibb.co/JWw2StmY/DSC-0037.jpg",
       title: "Creative Portrait",
       likes: 167,
       views: 780,
     },
 
     {
-      id: 10,
-      category: "Nature",
+      id: 11,
+      category: "Portraits",
       image:
-        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070",
+        "https://i.ibb.co/ccWw1ZDX/DSC-0371.jpg",
       title: "Sunset Silhouette",
       likes: 189,
       views: 830,
+    },
+    {
+      id: 12,
+      category: "Portraits",
+      image: "https://i.ibb.co/2YymgRFp/DSC-0036.jpg",
+      title: "Family Portrait",
+      likes: 145,
+      views: 720,
+    },
+    {
+      id: 13,
+      category: "family",
+      image: "https://i.ibb.co/1tTfkbfj/18-12x18-1.jpg",
+      title: "Family Portrait",
+      likes: 145,
+      views: 720,
+    },
+    {
+      id: 14,
+      category: "family",
+      image: "https://i.ibb.co/rf1NrR1x/Black-Modern-Family-Portrait-Facebook-Post.png",
+      title: "Family Portrait",
+      likes: 145,
+      views: 720,
     },
   ];
 
