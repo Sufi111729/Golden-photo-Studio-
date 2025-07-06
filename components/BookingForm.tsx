@@ -49,6 +49,8 @@ const BookingForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    console.log("Submitting form:", formData); // Debug
+
     try {
       const res = await fetch("https://golden-photo-studio-backend.onrender.com/api/v1/bookings", {
         method: "POST",
@@ -56,7 +58,12 @@ const BookingForm = () => {
         body: JSON.stringify(formData),
       });
 
-      if (!res.ok) throw new Error("Booking submission failed");
+      const data = await res.json();
+      console.log("Server response:", data); // Debug
+
+      if (!res.ok) {
+        throw new Error(data.message || "Booking submission failed");
+      }
 
       setIsSubmitted(true);
       setIsSubmitting(false);
@@ -73,9 +80,10 @@ const BookingForm = () => {
           message: "",
         });
       }, 3000);
-    } catch (err) {
+    } catch (err: any) {
+      console.error("Error:", err); // Debug
+      alert(err.message || "Something went wrong. Try again.");
       setIsSubmitting(false);
-      alert("Something went wrong. Try again later.");
     }
   };
 
@@ -96,8 +104,7 @@ const BookingForm = () => {
               Booking Confirmed!
             </h2>
             <p className="text-gray-600 text-sm mb-4">
-              Thank you for booking with Golden Photo Studio. We’ll reach out
-              shortly.
+              Thank you for booking with Golden Photo Studio. We’ll reach out shortly.
             </p>
             <button
               onClick={() => setIsSubmitted(false)}
@@ -193,7 +200,9 @@ const BookingForm = () => {
                     required
                     className="w-full border border-gray-300 px-4 py-3 rounded-lg"
                   >
-                    <option value="">Choose shoot type</option>
+                    <option value="" disabled>
+                      Choose shoot type
+                    </option>
                     {shootTypes.map((type) => (
                       <option key={type} value={type}>
                         {type}
