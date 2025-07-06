@@ -170,9 +170,9 @@ const Header = () => {
                   >
                     Book Session
                   </a>
-                </motion.div>
+                </div>
               </div>
-            </motion.div>
+            </div>
           )}
         </AnimatePresence>
       </header>
