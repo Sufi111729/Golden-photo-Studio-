@@ -50,7 +50,7 @@ const BookingForm = () => {
     setIsSubmitting(true);
 
     try {
-      const res = await fetch("http://localhost:8080/api/v1/bookings", {
+      const res = await fetch("https://golden-photo-studio-backend.onrender.com/api/v1/bookings", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
