@@ -46,26 +46,24 @@ const Header = () => {
           aria-label="Main site navigation"
         >
           {/* Logo */}
-          <Link href="/">
-            <motion.div
-              className="flex items-center cursor-pointer"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.2 }}
-            >
-              <div className="relative">
-                <div className="w-12 h-12 border border-gray-300 overflow-hidden rounded-lg">
-                  <Image
-                    src="https://cdn.builder.io/api/v1/image/assets%2F6efebc511b8f444288d493a58e0a6eb7%2F9270b234fb324a098964be4203cc18e8?format=webp&width=48"
-                    alt="Golden Photo Studio"
-                    width={48}
-                    height={48}
-                    className="w-full h-full object-contain"
-                    priority
-                    quality={85}
-                  />
-                </div>
+          <Link
+            href="/"
+            className="flex items-center"
+            aria-label="Golden Photo Studio - Home"
+          >
+            <div className="relative">
+              <div className="w-12 h-12 border border-gray-300 overflow-hidden rounded-lg">
+                <Image
+                  src="https://cdn.builder.io/api/v1/image/assets%2F6efebc511b8f444288d493a58e0a6eb7%2F9270b234fb324a098964be4203cc18e8?format=webp&width=48"
+                  alt="Golden Photo Studio logo - Professional photography services in Kasia"
+                  width={48}
+                  height={48}
+                  className="w-full h-full object-contain"
+                  priority
+                  quality={85}
+                />
               </div>
-            </motion.div>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
