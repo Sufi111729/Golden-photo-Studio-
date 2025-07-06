@@ -30,6 +30,7 @@ const nextConfig = {
     optimizeCss: true,
     optimizePackageImports: ["framer-motion", "lucide-react"],
     webVitalsAttribution: ["CLS", "LCP"],
+    serverComponentsExternalPackages: [],
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === "production",
