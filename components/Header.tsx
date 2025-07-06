@@ -125,16 +125,15 @@ const Header = () => {
         {/* Mobile Menu */}
         <AnimatePresence>
           {isMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
+            <div
+              id="mobile-menu"
               className={`lg:hidden border-t border-gray-300 ${
                 !isHomePage || scrolled
                   ? "bg-white"
                   : "bg-white/20 backdrop-blur-md"
               }`}
+              role="menu"
+              aria-labelledby="mobile-menu-button"
             >
               <div className="container mx-auto px-4 py-6 space-y-4">
                 {menuItems.map((item, index) => (
