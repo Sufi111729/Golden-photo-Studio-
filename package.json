@@ -5,9 +5,10 @@
     "scripts": {
         "dev": "next dev",
         "build": "next build",
-        "export": "next export",
+        "postbuild": "node ./node_modules/@netlify/next/dist/build.js",
         "start": "next start",
-        "lint": "next lint"
+        "lint": "next lint",
+        "export": "next export"
     },
     "dependencies": {
         "framer-motion": "^10.16.0",
