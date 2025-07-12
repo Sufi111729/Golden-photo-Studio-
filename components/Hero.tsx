@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { memo } from "react";
 
-const Hero = memo(() => {
+const Hero = memo(function Hero() {
   return (
     <section id="home" className="relative min-h-screen bg-white">
       {/* Background Image */}
@@ -75,8 +75,9 @@ const Hero = memo(() => {
             aria-label="Golden Photo Studio description"
           >
             At Golden Photo Studio we turn moments into timeless memories with
-            stunning photography. Whether it's a wedding, birthday, product
-            shoot, or corporate event — we've got you covered.
+            stunning photography. Whether stunning photography. Whether
+            it&apos;s a wedding, birthday, product shoot, or corporate event —
+            we&apos;ve got you covered.
           </motion.p>
 
           {/* CTA Buttons */}

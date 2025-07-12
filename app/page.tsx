@@ -14,6 +14,7 @@ export default function Home() {
   return (
     <>
       <a href="#main-content" className="sr-only focus:not-sr-only">
+        Skip to main content
       </a>
       <Header />
       <main id="main-content" className="overflow-x-hidden" role="main">

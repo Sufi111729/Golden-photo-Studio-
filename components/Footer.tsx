@@ -28,7 +28,7 @@ const Footer = () => {
                 </div>
               </div>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Capturing life's precious moments since 1980 in Kasia,
+                Capturing life&apos;s precious moments since 1980 in Kasia,
                 Kushinagar.
               </p>
             </motion.div>

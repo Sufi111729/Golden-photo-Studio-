@@ -15,8 +15,10 @@ const Testimonials = () => {
       id: 1,
       name: "Shweta Yadav",
       role: "Wedding Client",
-      image: "https://lh3.googleusercontent.com/a-/ALV-UjXZTbeKv2HYjxxzEnjaQzTj1CZKOWnXRtzAg4UMrrDfYDtmhwE=w90-h90-p-rp-mo-ba3-br100",
-      content: "It's amazing. The team is very professional and friendly. They made our wedding memories unforgettable. The photos are amazing and the event programs are very helpful.",
+      image:
+        "https://lh3.googleusercontent.com/a-/ALV-UjXZTbeKv2HYjxxzEnjaQzTj1CZKOWnXRtzAg4UMrrDfYDtmhwE=w90-h90-p-rp-mo-ba3-br100",
+      content:
+        "It&apos;s amazing. The team is very professional and friendly. They made our wedding memories unforgettable. The photos are amazing and the event programs are very helpful.",
       rating: 5,
       location: "Wedding Photography Client",
     },
@@ -24,8 +26,10 @@ const Testimonials = () => {
       id: 2,
       name: "Ayush _0057",
       role: "Wedding Couple",
-      image: "https://lh3.googleusercontent.com/a-/ALV-UjW5R2UrlIRB_QmR0LG-JycLpe3_jjcsePB4nN1LvAyWdGWD1mWEqw=w90-h90-p-rp-mo-br100",
-      content: "Event programs are very helpful and the photos are amazing. The team is very professional and friendly. They made our wedding memories unforgettable.",
+      image:
+        "https://lh3.googleusercontent.com/a-/ALV-UjW5R2UrlIRB_QmR0LG-JycLpe3_jjcsePB4nN1LvAyWdGWD1mWEqw=w90-h90-p-rp-mo-br100",
+      content:
+        "Event programs are very helpful and the photos are amazing. The team is very professional and friendly. They made our wedding memories unforgettable.",
       rating: 5,
       location: "Wedding Photography Clients",
     },
@@ -33,8 +37,10 @@ const Testimonials = () => {
       id: 3,
       name: "Mohd Saqib",
       role: "Event Client",
-      image: "https://lh3.googleusercontent.com/a-/ALV-UjW8wUjcXYbUdBsATRCTTf87JQyMy_W_pyjIyf9etzBMnBpuCB6B=w90-h90-p-rp-mo-br100",
-      content: "The experience was amazing. The people are very helpful. Their work was quick and perfect. Must visit/hire them for any kind of events.",
+      image:
+        "https://lh3.googleusercontent.com/a-/ALV-UjW8wUjcXYbUdBsATRCTTf87JQyMy_W_pyjIyf9etzBMnBpuCB6B=w90-h90-p-rp-mo-br100",
+      content:
+        "The experience was amazing. The people are very helpful. Their work was quick and perfect. Must visit/hire them for any kind of events.",
       rating: 5,
       location: "Google Review • Event Photography",
     },
@@ -42,8 +48,10 @@ const Testimonials = () => {
       id: 4,
       name: "Prashant Kumar",
       role: "Local Guide",
-      image: "https://lh3.googleusercontent.com/a-/ALV-UjU8Xy8Ug0M-FwMKUfoqXsnNpz3nUypS26jtWqqz83AB30A2keg7=w90-h90-p-rp-mo-ba2-br100",
-      content: "Great photography in Kasia Kushinagar and well trained photographer. Best experience you will get here. One stop for all your work.",
+      image:
+        "https://lh3.googleusercontent.com/a-/ALV-UjU8Xy8Ug0M-FwMKUfoqXsnNpz3nUypS26jtWqqz83AB30A2keg7=w90-h90-p-rp-mo-ba2-br100",
+      content:
+        "Great photography in Kasia Kushinagar and well trained photographer. Best experience you will get here. One stop for all your work.",
       rating: 5,
       location: "Google Review • Portrait Session",
     },
@@ -51,8 +59,10 @@ const Testimonials = () => {
       id: 5,
       name: "Prince Vlogs",
       role: "Local Guide",
-      image: "https://lh3.googleusercontent.com/a-/ALV-UjUHJWuw4-0UUXA6Gv0ex1DsJ9MeQvjmg4cKb3Lm_20_dvCY9Oo=w45-h45-p-rp-mo-br100",
-      content: "These photos are made very good, this is Kasia's no.1 photo editor and photographer. I have been taking photos from here for the last 5 years, and I am very happy with their work.",
+      image:
+        "https://lh3.googleusercontent.com/a-/ALV-UjUHJWuw4-0UUXA6Gv0ex1DsJ9MeQvjmg4cKb3Lm_20_dvCY9Oo=w45-h45-p-rp-mo-br100",
+      content:
+        "These photos are made very good, this is Kasia&apos;s no.1 photo editor and photographer. I have been taking photos from here for the last 5 years, and I am very happy with their work.",
       rating: 5,
       location: "Google Review • Portrait Session",
     },
@@ -60,8 +70,10 @@ const Testimonials = () => {
       id: 5,
       name: "Ranjit Singh",
       role: "Local Guide",
-      image: "https://lh3.googleusercontent.com/a-/ALV-UjWPcf-wY6B6YBIF_-PedVc0Z4YCw6u0t7r_wSIwS3yAIEcmoCtU=w90-h90-p-rp-mo-br100",
-      content: "Hi I am Atul.  Golden studio is the best studio in Kasia Kushinagar. I have been taking photos from here for the last 5 years, and I am very happy with their work.",
+      image:
+        "https://lh3.googleusercontent.com/a-/ALV-UjWPcf-wY6B6YBIF_-PedVc0Z4YCw6u0t7r_wSIwS3yAIEcmoCtU=w90-h90-p-rp-mo-br100",
+      content:
+        "Hi I am Atul.  Golden studio is the best studio in Kasia Kushinagar. I have been taking photos from here for the last 5 years, and I am very happy with their work.",
       rating: 5,
       location: "Google Review • Portrait Session",
     },
@@ -79,15 +91,13 @@ const Testimonials = () => {
   };
 
   const prevTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setCurrentTestimonial(
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length,
+    );
   };
 
   return (
-    <section
-      ref={ref}
-      id="testimonials"
-      className="py-16 md:py-24 bg-white"
-    >
+    <section ref={ref} id="testimonials" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -101,7 +111,8 @@ const Testimonials = () => {
           </h2>
           <div className="w-20 md:w-24 h-0.5 bg-amber-600 mx-auto mb-6 md:mb-8"></div>
           <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Hear from our valued clients about their experiences with Golden Photo Studio.
+            Hear from our valued clients about their experiences with Golden
+            Photo Studio.
           </p>
         </motion.div>
 
@@ -140,14 +151,19 @@ const Testimonials = () => {
                 <div className="space-y-4 text-center md:text-left">
                   {/* Stars */}
                   <div className="flex justify-center md:justify-start space-x-1">
-                    {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 text-amber-400 fill-current" />
-                    ))}
+                    {[...Array(testimonials[currentTestimonial].rating)].map(
+                      (_, i) => (
+                        <Star
+                          key={i}
+                          className="h-5 w-5 text-amber-400 fill-current"
+                        />
+                      ),
+                    )}
                   </div>
 
                   {/* Testimonial Content */}
                   <blockquote className="text-lg italic text-gray-700 leading-relaxed">
-                    "{testimonials[currentTestimonial].content}"
+                    &ldquo;{testimonials[currentTestimonial].content}&rdquo;
                   </blockquote>
 
                   {/* Author Info */}
@@ -190,7 +206,9 @@ const Testimonials = () => {
               key={index}
               onClick={() => setCurrentTestimonial(index)}
               className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                index === currentTestimonial ? "bg-amber-600 w-6" : "bg-gray-300"
+                index === currentTestimonial
+                  ? "bg-amber-600 w-6"
+                  : "bg-gray-300"
               }`}
             />
           ))}

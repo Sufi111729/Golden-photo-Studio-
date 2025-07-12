@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Camera, Award, Users, Heart } from "lucide-react";
 
-const About = memo(() => {
+const About = memo(function About() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
@@ -65,7 +65,9 @@ const About = memo(() => {
                   <Camera className="h-5 w-5 text-white" />
                 </div>
                 <div>
-                  <h4 className="font-medium text-gray-800 text-sm">Since 1980</h4>
+                  <h4 className="font-medium text-gray-800 text-sm">
+                    Since 1980
+                  </h4>
                   <p className="text-xs text-gray-500">Family Owned</p>
                 </div>
               </div>
@@ -87,7 +89,7 @@ const About = memo(() => {
               <p className="text-gray-600 leading-relaxed">
                 Founded in 1980, Golden Photo Studio has been the trusted choice
                 for families in Kasia and beyond. We specialize in capturing
-                life's most precious moments with a blend of traditional
+                life&apos;s most precious moments with a blend of traditional
                 craftsmanship and modern techniques.
               </p>
               <p className="text-gray-600 leading-relaxed">
@@ -115,9 +117,7 @@ const About = memo(() => {
                     <h4 className="font-medium text-gray-800">
                       {achievement.title}
                     </h4>
-                    <p className="text-sm text-gray-500">
-                      {achievement.desc}
-                    </p>
+                    <p className="text-sm text-gray-500">{achievement.desc}</p>
                   </div>
                 </motion.div>
               ))}
