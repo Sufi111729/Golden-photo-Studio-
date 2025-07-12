@@ -115,6 +115,7 @@ const BookingForm = () => {
           </div>
         </motion.div>
       )}
+      
 
       <section
         ref={ref}

@@ -38,19 +38,19 @@ const About = memo(() => {
         </motion.div>
 
         <div className="flex flex-col lg:flex-row gap-16 items-center">
-          {/* Image Side */}
+          {/* Image Side - Made smaller */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
             className="w-full lg:w-1/2 relative"
           >
-            <div className="relative w-full aspect-[3/4] overflow-hidden rounded-lg shadow-lg border-8 border-white">
+            <div className="relative w-full aspect-[3/4] overflow-hidden rounded-lg shadow-md border-2 border-white max-w-xs mx-auto">
               <Image
                 src="https://i.ibb.co/6kJQ7BG/DSC-0591.jpg"
                 alt="Golden Photo Studio"
                 fill
-                className="object-top object-cover grayscale hover:grayscale-0 transition-all duration-300"
+                className="object-top object-cover"
                 loading="lazy"
                 quality={50}
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -59,20 +59,20 @@ const About = memo(() => {
               />
             </div>
 
-            <div className="absolute -bottom-8 -right-8 bg-white p-6 shadow-lg border border-gray-100 w-64">
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center">
-                  <Camera className="h-6 w-6 text-white" />
+            <div className="absolute -bottom-6 -right-6 bg-white p-4 shadow-md border border-gray-100 w-56">
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 bg-amber-600 rounded-full flex items-center justify-center">
+                  <Camera className="h-5 w-5 text-white" />
                 </div>
                 <div>
-                  <h4 className="font-medium text-gray-800">Since 1980</h4>
-                  <p className="text-sm text-gray-500">Family Owned</p>
+                  <h4 className="font-medium text-gray-800 text-sm">Since 1980</h4>
+                  <p className="text-xs text-gray-500">Family Owned</p>
                 </div>
               </div>
             </div>
           </motion.div>
 
-          {/* Content Side */}
+          {/* Content Side remains unchanged */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}

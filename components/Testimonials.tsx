@@ -61,7 +61,7 @@ const Testimonials = () => {
       name: "Ranjit Singh",
       role: "Local Guide",
       image: "https://lh3.googleusercontent.com/a-/ALV-UjWPcf-wY6B6YBIF_-PedVc0Z4YCw6u0t7r_wSIwS3yAIEcmoCtU=w90-h90-p-rp-mo-br100",
-      content: "Hi I am Atul <br /> Golden studio is the best studio in Kasia Kushinagar . I have been taking photos from here for the last 5 years, and I am very happy with their work.",
+      content: "Hi I am Atul.  Golden studio is the best studio in Kasia Kushinagar. I have been taking photos from here for the last 5 years, and I am very happy with their work.",
       rating: 5,
       location: "Google Review • Portrait Session",
     },

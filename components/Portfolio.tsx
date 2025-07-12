@@ -17,7 +17,8 @@ const Portfolio = memo(() => {
   );
 
   const portfolioItems = [
-    {
+    // ... (keep your existing portfolioItems array)
+     {
       id: 1,
       category: "Weddings",
       image: "https://i.ibb.co/4wYdZXM7/1-7.jpg",
@@ -132,6 +133,14 @@ const Portfolio = memo(() => {
       likes: 145,
       views: 720,
     },
+     {
+      id: 15,
+      category: "family",
+      image: "https://i.ibb.co/xtg4z2dM/DSC-0045q.jpg",
+      title: "Family Portrait",
+      likes: 145,
+      views: 720,
+    },
   ];
 
   const filteredItems = useMemo(
@@ -139,51 +148,45 @@ const Portfolio = memo(() => {
       activeCategory === "All"
         ? portfolioItems
         : portfolioItems.filter((item) => item.category === activeCategory),
-    [activeCategory],
+    [activeCategory, portfolioItems],
   );
 
   return (
-    <section ref={ref} id="portfolio" className="py-20 bg-white text-gray-900">
+    <section ref={ref} id="portfolio" className="py-12 md:py-16 bg-white text-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-serif mb-2">
+        <div className="text-center mb-8 md:mb-10">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif mb-2">
             Our Portfolio
           </h2>
-          <div className="w-24 h-1 bg-amber-600 mx-auto mb-4" />
-          <p className="text-md text-gray-600 max-w-2xl mx-auto">
+          <div className="w-20 h-1 bg-amber-600 mx-auto mb-3" />
+          <p className="text-xs md:text-sm text-gray-600 max-w-2xl mx-auto">
             Browse through our collection of weddings, portraits, events,
-            products, and studio work that showcase our timeless style.
+            products, and studio work.
           </p>
         </div>
 
         {/* Category Filter */}
-        <div
-          className="flex flex-wrap justify-center gap-3 mb-12"
-          role="tablist"
-          aria-label="Portfolio category filters"
-        >
-          {categories.map((category, index) => (
-            <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              className={`px-5 py-2 rounded-full text-sm border transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-amber-600 focus:ring-offset-2 ${
-                activeCategory === category
-                  ? "bg-amber-600 text-white border-amber-600"
-                  : "border-gray-300 text-gray-700 hover:bg-gray-100"
-              }`}
-              role="tab"
-              aria-selected={activeCategory === category}
-              aria-controls={`portfolio-grid-${category.toLowerCase()}`}
-              aria-label={`Filter portfolio by ${category}`}
-            >
-              {category}
-            </button>
-          ))}
+        <div className="mb-6 md:mb-8 overflow-x-auto pb-2">
+          <div className="flex w-max mx-auto gap-1 md:gap-2 px-2 md:px-0">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setActiveCategory(category)}
+                className={`px-3 py-1 text-xs md:px-4 md:py-1.5 rounded-full border transition-colors duration-200 ${
+                  activeCategory === category
+                    ? "bg-amber-600 text-white border-amber-600"
+                    : "border-gray-200 text-gray-700 hover:bg-gray-50"
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
         </div>
 
-        {/* Portfolio Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Portfolio Grid - Smaller Cards */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
           <AnimatePresence mode="wait">
             {filteredItems.map((item) => (
               <motion.div
@@ -192,42 +195,42 @@ const Portfolio = memo(() => {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.3 }}
-                whileHover={{ y: -4 }}
-                className="group border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+                transition={{ duration: 0.2 }}
+                whileHover={{ y: -2 }}
+                className="group border border-gray-100 rounded-md overflow-hidden shadow-xs hover:shadow-sm transition-shadow cursor-pointer"
                 onClick={() => setSelectedImage(item.id)}
               >
-                <div className="aspect-square relative">
+                <div className="aspect-[4/3] relative">
+                  <div className="absolute inset-0 bg-gray-100 animate-pulse rounded-md" />
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="object-cover transition-transform duration-200 group-hover:scale-102"
                     loading="lazy"
-                    quality={40}
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    placeholder="blur"
-                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknywtgFRZzGBBCZgtIGCGHOHQqjvXhgPU/Rf8ANpwWCmKr4SL34AQXhJOBkDbyOV0UXeH2xY4/NyPp4nIXWkhcMnvvwGbE0VWFGlG4VmxmIiWqGLAXMWdfQvIJ5PjE2CQH5+H0HKe2BdpgVUCg8wGpNpYQnUP9BSAYfUvUt6sKhNOC7v8AW7wgVVMk0Ey7A="
+                    quality={65}
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   />
-                  {/* Bottom Overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 bg-white/80 backdrop-blur-sm p-4">
-                    <h3 className="text-lg font-semibold font-serif mb-1">
+                  
+                  {/* Bottom Overlay - Smaller */}
+                  <div className="absolute bottom-0 left-0 right-0 bg-white/80 backdrop-blur-xs p-2">
+                    <h3 className="text-xs font-medium line-clamp-1">
                       {item.title}
                     </h3>
-                    <div className="flex justify-between text-sm text-gray-700">
-                      <span className="flex items-center gap-1">
-                        <Heart className="h-4 w-4" />
+                    <div className="flex justify-between text-[10px] text-gray-600 mt-0.5">
+                      <span className="flex items-center gap-0.5">
+                        <Heart className="h-2.5 w-2.5" />
                         {item.likes}
                       </span>
-                      <span className="flex items-center gap-1">
-                        <Eye className="h-4 w-4" />
+                      <span className="flex items-center gap-0.5">
+                        <Eye className="h-2.5 w-2.5" />
                         {item.views}
                       </span>
                     </div>
                   </div>
 
-                  {/* Category Tag */}
-                  <div className="absolute top-3 left-3 bg-white text-gray-800 px-3 py-1 text-xs rounded-full border border-gray-200">
+                  {/* Category Tag - Smaller */}
+                  <div className="absolute top-1.5 left-1.5 bg-white text-gray-700 px-1.5 py-0.5 text-[10px] rounded-full border border-gray-100 capitalize">
                     {item.category}
                   </div>
                 </div>
@@ -236,49 +239,67 @@ const Portfolio = memo(() => {
           </AnimatePresence>
         </div>
 
-        {/* CTA Button */}
-        <div className="text-center mt-16">
-          <button className="px-8 py-3 border border-amber-600 text-amber-600 rounded-full font-medium hover:bg-amber-600 hover:text-white transition-colors duration-300">
-            View Complete Portfolio
+        {/* CTA Button - Smaller */}
+        <div className="text-center mt-8 md:mt-10">
+          <button className="px-5 py-1.5 text-sm border border-amber-600 text-amber-600 rounded-full font-medium hover:bg-amber-600 hover:text-white transition-colors duration-200">
+            View More
           </button>
         </div>
       </div>
 
-      {/* Lightbox Modal */}
+      {/* Lightbox Modal - Compact */}
       <AnimatePresence>
         {selectedImage && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
+            className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-2"
             onClick={() => setSelectedImage(null)}
           >
             <motion.div
               initial={{ scale: 0.95 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.95 }}
-              className="relative max-w-4xl max-h-[90vh] w-full"
+              className="relative w-full max-w-md"
               onClick={(e) => e.stopPropagation()}
             >
               {portfolioItems.find((item) => item.id === selectedImage) && (
-                <Image
-                  src={
-                    portfolioItems.find((item) => item.id === selectedImage)!
-                      .image
-                  }
-                  alt={
-                    portfolioItems.find((item) => item.id === selectedImage)!
-                      .title
-                  }
-                  width={1200}
-                  height={800}
-                  className="w-full h-auto rounded-lg shadow-2xl"
-                />
+                <>
+                  <div className="relative aspect-[4/3] bg-gray-800 rounded-t-lg overflow-hidden">
+                    <Image
+                      src={
+                        portfolioItems.find((item) => item.id === selectedImage)!
+                          .image
+                      }
+                      alt={
+                        portfolioItems.find((item) => item.id === selectedImage)!
+                          .title
+                      }
+                      fill
+                      className="object-contain"
+                      priority
+                    />
+                  </div>
+                  <div className="bg-white p-3 rounded-b-lg">
+                    <h3 className="text-sm font-medium">
+                      {portfolioItems.find((item) => item.id === selectedImage)!.title}
+                    </h3>
+                    <div className="flex justify-between text-xs text-gray-500 mt-1">
+                      <span className="capitalize">
+                        {portfolioItems.find((item) => item.id === selectedImage)!.category}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <Heart className="h-3 w-3" />
+                        {portfolioItems.find((item) => item.id === selectedImage)!.likes}
+                      </span>
+                    </div>
+                  </div>
+                </>
               )}
               <button
                 onClick={() => setSelectedImage(null)}
-                className="absolute top-4 right-4 w-10 h-10 bg-white text-black rounded-full flex items-center justify-center hover:bg-gray-100 transition"
+                className="absolute -top-3 -right-3 w-7 h-7 bg-white text-black rounded-full flex items-center justify-center hover:bg-gray-100 transition shadow-md"
               >
                 ×
               </button>
@@ -290,4 +311,5 @@ const Portfolio = memo(() => {
   );
 });
 
+Portfolio.displayName = "Portfolio";
 export default Portfolio;
