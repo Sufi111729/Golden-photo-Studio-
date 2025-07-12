@@ -113,6 +113,7 @@ export const metadata: Metadata = {
       url: "https://cdn.builder.io/api/v1/image/assets%2F6efebc511b8f444288d493a58e0a6eb7%2F9270b234fb324a098964be4203cc18e8?format=png&width=180",
     },
   ],
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({
