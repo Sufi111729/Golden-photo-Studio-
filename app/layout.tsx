@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import React from "react";
-import { MetaHTMLAttributes } from "react";
 
 export const metadata: Metadata = {
   title: {
@@ -228,29 +227,13 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link rel="preconnect" href="https://cdn.builder.io" />
-        <link rel="preconnect" href="https://i.ibb.co" />
-        <link rel="manifest" href="/manifest.json" />
-        <link rel="dns-prefetch" href="//images.unsplash.com" />
-        <meta name="theme-color" content="#2563eb" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
-        <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+      <body className="font-body bg-white">
+        {children}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
-      </head>
-      <body className="font-body bg-white">{children}</body>
+      </body>
     </html>
   );
 }
