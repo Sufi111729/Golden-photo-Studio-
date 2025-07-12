@@ -4,12 +4,11 @@
     "private": true,
     "scripts": {
         "dev": "next dev",
-        "build": "next build",
-        "postbuild": "node ./node_modules/@netlify/next/dist/build.js",
+        "build": "next build && next export",
         "start": "next start",
-        "lint": "next lint",
-        "export": "next export"
+        "lint": "next lint"
     },
+
     "dependencies": {
         "framer-motion": "^10.16.0",
         "lucide-react": "^0.292.0",
@@ -19,7 +18,6 @@
         "react-icons": "^4.11.0"
     },
     "devDependencies": {
-        "@netlify/next": "^1.4.9",
         "@types/node": "^20",
         "@types/react": "^18",
         "@types/react-dom": "^18",
